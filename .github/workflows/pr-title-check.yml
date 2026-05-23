@@ -1,0 +1,71 @@
+name: PR Title Check
+on:
+  pull_request:
+    types: [opened, edited, synchronize, ready_for_review]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  title:
+    name: PR Title Check
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request || {};
+            const repo = context.repo;
+            const title = pr.title || "";
+            const MARK = "<!-- pr-title-lint -->";
+
+            async function upsert(lines){
+              const body = [MARK].concat(lines).join("\n");
+              const resp = await github.rest.issues.listComments({ owner: repo.owner, repo: repo.repo, issue_number: pr.number, per_page: 100 });
+              const ex = (resp.data || []).find(c => c.body && c.body.indexOf(MARK) !== -1);
+              if (ex) {
+                await github.rest.issues.updateComment({ owner: repo.owner, repo: repo.repo, comment_id: ex.id, body });
+              } else {
+                await github.rest.issues.createComment({ owner: repo.owner, repo: repo.repo, issue_number: pr.number, body });
+              }
+            }
+            async function cleanup(){
+              const resp = await github.rest.issues.listComments({ owner: repo.owner, repo: repo.repo, issue_number: pr.number, per_page: 100 });
+              const ex = (resp.data || []).find(c => c.body && c.body.indexOf(MARK) !== -1);
+              if (ex) { await github.rest.issues.deleteComment({ owner: repo.owner, repo: repo.repo, comment_id: ex.id }); }
+            }
+            async function safeUpsert(lines){ try{ await upsert(lines); }catch(e){ core.warning("Cannot comment: " + (e.message||e)); } }
+            async function safeCleanup(){ try{ await cleanup(); }catch(e){} }
+            async function fail(lines){ await safeUpsert(lines); core.setFailed("PR title invalid"); }
+
+            // 规则：标题中任意位置包含 HW{整数}；整数为 0 或正整数；不允许前导 0（除 0 本身）
+            const re = /HW(0|[1-9]\d*)/i;
+
+            if (!re.test(title)) {
+              await fail([
+                "### 🚫 PR 标题格式错误",
+                "",
+                "你的标题：`" + title + "`",
+                "",
+                "**要求**：标题中需包含 `HW{整数}`（大小写不敏感，可出现在任意位置）",
+                "- `整数` 为 `0` 或正整数（不允许前导 0，例如 `HW03` 不通过）",
+                "",
+                "**示例（通过）**：",
+                "- `HW0 - Bean`",
+                "- `HW3`",
+                "- `Bean HW42 Performance tuning`",
+                "- `fix: update hw5 solution`",
+                "",
+                "**示例（不通过）**：",
+                "- `homework 3`（缺少 `HW` 前缀）",
+                "- `HW-3 test`（不是非负整数）",
+                "- `HW03 test`（前导 0）"
+              ]);
+              return;
+            }
+
+            await safeCleanup();
+            core.info("✅ PR title OK");
