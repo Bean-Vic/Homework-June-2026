@@ -16,16 +16,17 @@ https://leetcode.com/problem-list/oizxjoit/
 2. Explain the difference between var, let, & const.
 3. What is immutability? What data types in JS are immutable?
 4. What is the difference between == and ===?
-5. What are some examples of falsy values in JS?
-6. Explain hoisting in JavaScript.
-7. Explain variable shadowing in Javascript.
-8. What is a callback function? 
-9. What’s the difference between primitive data types and reference data types in JS?
-10. What’s the difference between array for loop and forEach?
-11. What’s the difference between array map and forEach?
-12. What is the difference between array slice and splice?
-13. What is ‘use strict’? What are the major eﬀects that it has?
-14. What is an arguments object?
+5. What is the difference between undefined and null?
+6. List falsy values in JS.
+7. Explain hoisting in JavaScript.
+8. Explain variable shadowing in JavaScript.
+9. What are 3 ways to declare functions? 
+10. What is a callback function? 
+11. What’s the difference between primitive data types and reference data types in JS?
+12. What’s the difference between array for loop and forEach?
+13. What’s the difference between array map and forEach?
+14. What is the difference between array slice and splice?
+15. What is an arguments object?
 </aside>
 
 ⼩组间Peer Mock，录⾳并上传
