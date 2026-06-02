@@ -14,17 +14,14 @@ https://leetcode.com/problem-list/oizxjoit/
 
 1. What is HTML?
 2. What is the minimal structure of an HTML5 document?
-3. What is the purpose of the meta tag?
-4. What is the difference between `<head>` and `<header>` ?
-5. What is the <form> tag used for in HTML?
-6. Explain the following code
-    
-    ```html
-    <a href="http://example.com/sample_page/" rel="noreferrer nofollow">Link</a>
-    ```
-    
-7. How do you serve your page in multiple languages?
-8. What are semantic HTML tags and why are they important?
+3. What is the purpose of the `meta` tag?
+4. What is the difference between `<head>` and `<header>`?
+5. What element can we use to create a dropdown list?
+6. What is the `<form>` tag used for in HTML?
+7. Explain the `rel="noreferrer nofollow"` attribute in `<a>` tag? How can we open the link in a new tab?
+8. How do you serve your page in multiple languages?
+9. What are semantic HTML tags, and why are they important?
+10. What’s the difference between SVG and Canvas?
 </aside>
 
 ⼩组间Peer Mock，录⾳并上传

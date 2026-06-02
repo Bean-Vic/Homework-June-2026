@@ -13,21 +13,19 @@ https://leetcode.com/problem-list/oizxjoit/
 <aside>
 
 1. What is CSS?
-2. How do you link a CSS file to an HTML document?
-3. What is block element? How is it different from inline, and inline-block elements?
-4. What is the difference between pseudo-class and pseudo-element?
-5. What is the difference between the child combinator and the descendant combinator?
+2. What is block element? How is it different from inline, and inline-block elements?
+3. What is the difference between pseudo-class and pseudo-element?
+4. What is the difference between the child combinator and the descendant combinator?
+5. What is the attribute selector? Give some examples.
 6. What are two ways that we can make an element invisible? What is the difference?
-7. What is the Box Model? Describe each part.
-8. What is the usage of !important? What are some use cases?
+7. What is the CSS Box Model? Describe each part.
+8. What is the usage of `!important`? What are some use cases?
 9. What does z-index do?
 10. Can padding and margin be negative?
 11. How do you center a block element with CSS?
 12. What are grid items? Can you explain some grid item properties?
 13. What is a flex container? Can you explain some flex container properties?
-14. Assume a parent element has *width = 200px* and one child element*.* If the child element’s width is set to ‘auto’, what are the values of its width, left-margin, & right-margin?
-15. Can you explain the difference between px, em and rem as they relate to font sizing?
-16. What is responsive web design? How do we achieve this?
+14. What is responsive web design? How do we achieve this?
 </aside>
 
 ⼩组间Peer Mock，录⾳并上传
@@ -64,31 +62,28 @@ https://leetcode.com/problem-list/oizxjoit/
 ![image](https://github.com/user-attachments/assets/f39db683-e85c-4e19-b8fa-db612d105da6)
 
 
-3. Build a simple “Profile Card” page with Tailwind
+3. Using **Tailwind CSS**, complete the layout with the following requirements:
 
-- A **centered** **card** with:
-    - Background color
-    - Padding and margin
-    - A title and short paragraph
-    - Hover effect to change background color
-- A **fixed footer** at the bottom:
-    - Keep the footer at the bottom of the screen, even when the page is scrolled.
-    - Full width with background
+- The page should take up the full height of the screen
+- The content should be horizontally and vertically centered on the page
+- There is one box with blue background color in the center of the page
+- The box should have padding on all sides so the text is not touching the edges
+- The box should have rounded corners
+- The box should display the text “Hello Tailwind”, and text is white
 - Starter code
-    
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <title>Tailwind Assignment</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-      </head>
-      <body class="bg-gray-100 min-h-screen">
-        <!-- Put your code here -->
-      </body>
-    </html>
-    ```
-    
 
-![image](https://github.com/user-attachments/assets/1c29d598-c190-49ea-82dc-e97191f9cec8)
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tailwind Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <!-- write code here -->
+  </body>
+</html>
+```
+<img width="2786" height="1654" alt="image" src="https://github.com/user-attachments/assets/ae5b57ce-404f-4ce1-bcee-e008eea95a02" />
