@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+</head>
+<body>
+  <center>
+    <table border="8" cellpadding="8" cellspacing="0">
+      <tr><td>
+        <h1>Community Workshop Registration</h1>
+        <p><strong><em>Note: Please submit this form at least 14 days before your chosen session.</em></strong></p>
+
+        <form method="post" enctype="multipart/form-data">
+          <fieldset>
+            <legend>Personal Details</legend>
+            <label>Name: <input type="text" name="full-name" placeholder="Your full name"></label><br><br>
+            <label>Address: <input type="text" name="address" placeholder="Street, City, State"></label><br><br>
+            <label>Email: <input type="email" name="email" placeholder="you@example.com"></label><br><br>
+            <label>Phone Number: <input type="tel" name="phone" placeholder="123-456-7890"></label><br><br>
+            <label>Age: <input type="number" name="age" value="0" min="0"></label><br><br>
+            Gender:<br><br>
+            <label><input type="radio" name="gender" value="male"> Male</label><br>
+            <label><input type="radio" name="gender" value="female"> Female</label><br>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Workshop Preferences</legend>
+            <label>Preferred Session Date: <input type="date" name="session-date"></label><br><br>
+            <label>T-shirt Size:
+              <select name="tshirt-size">
+                <option value="">Select size</option><option>Small</option><option>Medium</option><option>Large</option><option>X-large</option>
+              </select>
+            </label><br><br>
+            <label>Experience Level:
+              <select name="experience-level">
+                <option value="">Select level</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option>
+              </select>
+            </label><br><br>
+            Check all that apply:<br><br>
+            <label><input type="checkbox" name="preferences" value="vegetarian"> Vegetarian</label><br>
+            <label><input type="checkbox" name="preferences" value="special-assistance"> Require special assistance</label><br>
+            <label><input type="checkbox" name="preferences" value="previous-experience"> Have previous workshop experience</label><br>
+            <label><input type="checkbox" name="preferences" value="available-weekdays"> Available on weekdays</label><br>
+            <label><input type="checkbox" name="preferences" value="available-weekends"> Available on weekends</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Additional Information</legend>
+            <label>Why are you interested in this workshop?<br>
+              <textarea name="interest" rows="5" cols="50" placeholder="Tell us in 50 words or more"></textarea>
+            </label><br><br>
+            <label>List any relevant skills or experience:<br>
+              <textarea name="skills" rows="5" cols="50" placeholder="e.g., woodworking, painting, coding"></textarea>
+            </label><br><br>
+            <label>Upload Proof of Residency &amp; ID: <input type="file" name="proof" multiple></label>
+          </fieldset>
+
+          <hr>
+          <h2>Available Workshop Sessions</h2>
+          <table border="1">
+            <caption>June 2025 Workshop Schedule</caption>
+            <tr><th>Date</th><th>Time</th><th>Topic</th></tr>
+            <tr><td>June 3, 2025</td><td>10:00 AM - 1:00 PM</td><td>Introduction to Pottery</td></tr>
+            <tr><td>June 10, 2025</td><td>2:00 PM - 5:00 PM</td><td>Basic Woodworking</td></tr>
+            <tr><td>June 17, 2025</td><td>9:00 AM - 12:00 PM</td><td>Watercolor Painting</td></tr>
+            <tr><td>June 24, 2025</td><td>1:00 PM - 4:00 PM</td><td>Intro to Coding</td></tr>
+          </table>
+
+          <hr>
+          <p><a href="https://example.com/">Visit our Community Hub</a></p>
+          <hr>
+          <input type="submit" value="Submit Registration">
+        </form>
+      </td></tr>
+    </table>
+  </center>
+</body>
+</html>
