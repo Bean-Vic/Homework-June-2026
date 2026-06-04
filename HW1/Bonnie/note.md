@@ -55,3 +55,5 @@ and better SEO, search engines understand content more clearly
 10. What’s the difference between SVG and Canvas?
 SVG is Vector-based, is the DOM elements easy to style with CSS and good for icons and charts
 canvas is Pixel-based, not a part of DOM, better for games and better performance
+
+![alt text](image.png)
