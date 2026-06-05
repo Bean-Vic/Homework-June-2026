@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Registration Form" />
     <title>Registration Form</title>
   </head>
 
@@ -11,42 +10,243 @@
     <h1>Registration Form</h1>
 
     <p>
-      <em>Fill out the form below to register for the workshop.</em>
+      <em
+        >Note: Please submit this form at least 14 days before your chosen
+        session.</em
+      >
     </p>
-    <form>
-      <p>
-        <label for="sessionDate">Preferred Session Date:</label>
-        <input type="date" id="sessionDate" name="sessionDate" />
-      </p>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Personal Details</legend>
+
+        <p>
+          <label for="fullName">Name:</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Your full name"
+          />
+        </p>
+
+        <p>
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Street, City, State"
+          />
+        </p>
+
+        <p>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+          />
+        </p>
+
+        <p>
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="123-456-7890"
+          />
+        </p>
+
+        <p>
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" min="1" />
+        </p>
+
+        <p>Gender:</p>
+
+        <p>
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label>
+        </p>
+
+        <p>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+        </p>
+
+        <p>
+          <input type="radio" id="other" name="gender" value="other" />
+          <label for="other">Other</label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Workshop Preferences</legend>
+
+        <p>
+          <label for="sessionDate">Preferred Session Date:</label>
+          <input type="date" id="sessionDate" name="sessionDate" />
+        </p>
+
+        <p>
+          <label for="shirtSize">T-shirt Size:</label>
+          <select id="shirtSize" name="shirtSize">
+            <option value="">Select size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="x-large">X-large</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="experience">Experience Level:</label>
+          <select id="experience" name="experience">
+            <option value="">Select level</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </p>
+
+        <p>Check all that apply:</p>
+
+        <p>
+          <input
+            type="checkbox"
+            id="vegetarian"
+            name="preferences"
+            value="vegetarian"
+          />
+          <label for="vegetarian">Vegetarian</label>
+        </p>
+
+        <p>
+          <input
+            type="checkbox"
+            id="specialAssistance"
+            name="preferences"
+            value="specialAssistance"
+          />
+          <label for="specialAssistance">Require special assistance</label>
+        </p>
+
+        <p>
+          <input
+            type="checkbox"
+            id="previousExperience"
+            name="preferences"
+            value="previousExperience"
+          />
+          <label for="previousExperience"
+            >Have previous workshop experience</label
+          >
+        </p>
+
+        <p>
+          <input
+            type="checkbox"
+            id="weekdays"
+            name="availability"
+            value="weekdays"
+          />
+          <label for="weekdays">Available on weekdays</label>
+        </p>
+
+        <p>
+          <input
+            type="checkbox"
+            id="weekends"
+            name="availability"
+            value="weekends"
+          />
+          <label for="weekends">Available on weekends</label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Additional Information</legend>
+
+        <p>
+          <label for="interest">Why are you interested in this workshop?</label>
+        </p>
+        <textarea
+          id="interest"
+          name="interest"
+          rows="4"
+          cols="50"
+          placeholder="Tell us in 50 words or more"
+        ></textarea>
+
+        <p>
+          <label for="skills">List any relevant skills or experience:</label>
+        </p>
+        <textarea
+          id="skills"
+          name="skills"
+          rows="4"
+          cols="50"
+          placeholder="e.g., woodworking, painting, coding"
+        ></textarea>
+
+        <p>
+          <label for="proof">Upload Proof of Residency & ID:</label>
+          <input type="file" id="proof" name="proof" />
+        </p>
+      </fieldset>
+
+      <h2>Available Workshop Sessions</h2>
+
+      <table border="1">
+        <caption>
+          June 2025 Workshop Schedule
+        </caption>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>June 3, 2025</td>
+            <td>10:00 AM - 1:00 PM</td>
+            <td>Introduction to Pottery</td>
+          </tr>
+
+          <tr>
+            <td>June 10, 2025</td>
+            <td>2:00 PM - 5:00 PM</td>
+            <td>Basic Woodworking</td>
+          </tr>
+
+          <tr>
+            <td>June 17, 2025</td>
+            <td>9:00 AM - 12:00 PM</td>
+            <td>Watercolor Painting</td>
+          </tr>
+
+          <tr>
+            <td>June 24, 2025</td>
+            <td>1:00 PM - 4:00 PM</td>
+            <td>Intro to Coding</td>
+          </tr>
+        </tbody>
+      </table>
 
       <p>
-        <label for="tshirtSize">T-shirt Size:</label>
-        <select id="tshirtSize" name="tshirtSize">
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
-          <option value="x-large">X-large</option>
-        </select>
-      </p>
-
-      <p>
-        <label for="experienceLevel">Experience Level:</label>
-        <select id="experienceLevel" name="experienceLevel">
-          <option value="beginner">Beginner</option>
-          <option value="intermediate">Intermediate</option>
-          <option value="advanced">Advanced</option>
-        </select>
-      </p>
-
-      <p>
-        <label for="fileupload">Upload Files:</label>
-        <input type="file" id="fileupload" name="fileupload" multiple />
-      </p>
-
-      <p>
-        <a href="https://example.com/" target="_blank" rel="noreferrer nofollow"
-          >Visit our Community Hub</a
+        <a
+          href="https://example.com/"
+          target="_blank"
+          rel="noreferrer nofollow"
         >
+          Visit our Community Hub
+        </a>
       </p>
 
       <p>
