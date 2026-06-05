@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox Layout</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      .container {
+        width: 800px;
+        margin: 40px auto;
+      }
+
+      header {
+        background-color: #9acd32;
+        height: 100px;
+        padding: 20px;
+      }
+
+      .main {
+        display: flex;
+        min-height: 300px;
+      }
+
+      nav {
+        background-color: #f5f5dc;
+        width: 160px;
+        padding: 20px;
+      }
+
+      article {
+        background-color: white;
+        flex: 1;
+        padding: 20px;
+      }
+
+      aside {
+        background-color: #f5f5dc;
+        width: 160px;
+        padding: 20px;
+      }
+
+      footer {
+        background-color: yellow;
+        height: 60px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>Header</header>
+
+      <div class="main">
+        <nav>Nav</nav>
+        <article>Article</article>
+        <aside>Aside</aside>
+      </div>
+
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
