@@ -1,6 +1,6 @@
 JS mock
 1. What is dynamic typing?
-JSvascript is a dynamic language.Dynamic typing meanings the data type could be changed after initialization. 
+Jvascript is a dynamic language.Dynamic typing meanings the data type could be changed after initialization. 
 
 2. Explain the difference between var, let, & const.
 var: function scoped; can be hosting to the top of function and will be initialized as undefined; can be reassigned and redeclared.
@@ -9,7 +9,6 @@ const: block scoped; It is also hoisted and stays in the TDZ before initializati
 
 3. What is immutability? What data types in JS are immutable?
 imutability means the value cannot be deirectly changed after it is created. In JS, primtive value types are imutable, like String, number, bollean, bigint,symbol,undefined, null.
-
 Objects and arrays are mutable because their properties or elements can be changed.
 
 4. What is the difference between == and ===?
@@ -18,7 +17,7 @@ Objects and arrays are mutable because their properties or elements can be chang
 
 5. What is difference between undefined and null?
 undefined means a variable has been declared but has not been assigned a value.
-null means we intentionally assign an empty value.
+null means we  assign an empty value.
 undefined is usually set by JavaScript.
 null is usually set by developers.
 
@@ -27,7 +26,6 @@ false, 0, -0, 0n, "", null, undefined, NaN
 
 7. Explain hoisting in JavaScript.
 Hoisting means JavaScript moves variable and function declarations to the top of their scope during compilation.
-
 var is hoisted and initialized as undefined.
 let and const are hoisted but stay in the Temporal Dead Zone.
 Function declarations are fully hoisted.
@@ -60,8 +58,7 @@ map is used to transform each element and returns a new array.
 14. What is the difference between array slice and splice?
 Both slice() and splice() are used to work with arrays, but they behave differently.
 slice() does not modify the original array.
-It returns a new array containing the selected elements.
-
+    It returns a new array containing the selected elements.
 splice() modifies the original array.
 It can remove, replace, or insert elements into the array.
 
