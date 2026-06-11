@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HW4 - Question 2-2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 24px;
+      }
+      .tabs {
+        width: 540px;
+        border: 1px solid #ddd;
+      }
+      #tabBar {
+        display: flex;
+        background: #f5f5f5;
+        border-bottom: 1px solid #ddd;
+      }
+      #tabBar button {
+        padding: 16px 20px;
+        font-size: 16px;
+        border: none;
+        border-right: 1px solid #ddd;
+        background: transparent;
+        cursor: pointer;
+      }
+      #tabBar button.active {
+        background: #d9d9d9;
+      }
+      .content {
+        padding: 8px 20px 24px;
+      }
+      .content h2 {
+        margin-bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs">
+      <div id="tabBar">
+        <button data-tab="London">London</button>
+        <button data-tab="Paris">Paris</button>
+        <button data-tab="Tokyo">Tokyo</button>
+      </div>
+      <div class="content">
+        <h2 id="content-title"></h2>
+        <p id="content-description"></p>
+      </div>
+    </div>
+    <script src="question2-2.js"></script>
+  </body>
+</html>
