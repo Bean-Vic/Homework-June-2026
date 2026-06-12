@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Table</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        color: #1f2937;
+      }
+
+      main {
+        width: min(960px, calc(100% - 32px));
+        margin: 48px auto;
+      }
+
+      h1 {
+        margin: 0 0 20px;
+        font-size: 28px;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        background: #ffffff;
+        border: 1px solid #d8dee9;
+        border-radius: 8px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 720px;
+      }
+
+      th,
+      td {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        text-align: left;
+      }
+
+      th {
+        background: #eef2f7;
+        font-weight: 700;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Student Information</h1>
+      <div class="table-wrap">
+        <table id="student-table"></table>
+      </div>
+    </main>
+
+    <script>
+      const tableInfo = {
+        tableHeader: ["Student Name", "Age", "Phone", "Address"],
+        tableContent: [
+          {
+            "Student Name": "John",
+            Age: 19,
+            Phone: "455 - 983 - 0903",
+            Address: "123 Ave, San Francisco, CA, 94011",
+          },
+          {
+            "Student Name": "Alex",
+            Age: 21,
+            Phone: "455 - 983 - 0912",
+            Address: "456 Rd, San Francisco, CA, 94012",
+          },
+          {
+            "Student Name": "Josh",
+            Age: 22,
+            Phone: "455 - 345 - 0912",
+            Address: "789 Dr, Newark, CA, 94016",
+          },
+          {
+            "Student Name": "Matt",
+            Age: 23,
+            Phone: "321 - 345 - 0912",
+            Address: "223 Dr, Sunnyvale, CA, 94016",
+          },
+        ],
+      };
+
+      const table = document.getElementById("student-table");
+
+      const thead = document.createElement("thead");
+      const headerRow = document.createElement("tr");
+
+      tableInfo.tableHeader.forEach((header) => {
+        const th = document.createElement("th");
+        th.textContent = header;
+        headerRow.appendChild(th);
+      });
+
+      thead.appendChild(headerRow);
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+
+      tableInfo.tableContent.forEach((student) => {
+        const row = document.createElement("tr");
+
+        tableInfo.tableHeader.forEach((header) => {
+          const td = document.createElement("td");
+          td.textContent = student[header];
+          row.appendChild(td);
+        });
+
+        tbody.appendChild(row);
+      });
+
+      table.appendChild(tbody);
+    </script>
+  </body>
+</html>
