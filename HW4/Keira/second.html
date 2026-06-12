@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Tabs</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      color: #000000;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .tabs {
+      width: min(92vw, 900px);
+      border: 1px solid #cccccc;
+    }
+
+    .tab-list {
+      display: flex;
+      border-bottom: 1px solid #cccccc;
+      background: #f1f1f1;
+    }
+
+    .tab-button {
+      appearance: none;
+      border: 0;
+      border-right: 1px solid transparent;
+      padding: 22px 30px;
+      background: #f1f1f1;
+      color: #000000;
+      font: inherit;
+      font-size: 28px;
+      line-height: 1.15;
+      cursor: pointer;
+    }
+
+    .tab-button:hover {
+      background: #dddddd;
+    }
+
+    .tab-button.active {
+      background: #cccccc;
+    }
+
+    .tab-panel {
+      display: none;
+      min-height: 185px;
+      padding: 42px 24px;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .tab-panel h2 {
+      margin: 0 0 34px;
+      font-size: 34px;
+      line-height: 1.1;
+    }
+
+    .tab-panel p {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+  <main class="tabs">
+    <div class="tab-list" aria-label="City tabs">
+      <button class="tab-button active" type="button" data-city="london">London</button>
+      <button class="tab-button" type="button" data-city="paris">Paris</button>
+      <button class="tab-button" type="button" data-city="tokyo">Tokyo</button>
+    </div>
+
+    <section class="tab-panel active" data-city="london">
+      <h2>London</h2>
+      <p>London is the capital city of England.</p>
+    </section>
+
+    <section class="tab-panel" data-city="paris">
+      <h2>Paris</h2>
+      <p>Paris is the capital of France.</p>
+    </section>
+
+    <section class="tab-panel" data-city="tokyo">
+      <h2>Tokyo</h2>
+      <p>Tokyo is the capital of Japan.</p>
+    </section>
+  </main>
+
+  <script>
+    const tabList = document.querySelector(".tab-list");
+    const buttons = document.querySelectorAll(".tab-button");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    tabList.addEventListener("click", (event) => {
+      const selectedButton = event.target.closest(".tab-button");
+
+      if (!selectedButton || !tabList.contains(selectedButton)) {
+        return;
+      }
+
+      const selectedCity = selectedButton.dataset.city;
+
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button === selectedButton);
+      });
+
+      panels.forEach((panel) => {
+        panel.classList.toggle("active", panel.dataset.city === selectedCity);
+      });
+    });
+  </script>
+</body>
+</html>
