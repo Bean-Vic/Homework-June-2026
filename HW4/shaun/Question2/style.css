@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+}
+
+.tabs {
+  max-width: 800px;
+  border: 1px solid #cccccc;
+}
+
+.tab-buttons {
+  display: flex;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #cccccc;
+}
+
+.tab-button {
+  border: none;
+  background-color: transparent;
+  padding: 20px 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background-color: #dddddd;
+}
+
+.tab-button.active {
+  background-color: #cccccc;
+}
+
+.tab-content {
+  display: none;
+  padding: 30px;
+}
+
+.tab-content.active {
+  display: block;
+}
