@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW5 Question 2-1b: User Lookup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f5f0e6;
+        --ink: #1f1b16;
+        --rule: #c9bda6;
+        --accent: #b3401e;
+        --highlight: #e8dfc9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "IBM Plex Mono", monospace;
+        background: var(--paper);
+        background-image: repeating-linear-gradient(
+          transparent,
+          transparent 31px,
+          rgba(31, 27, 22, 0.04) 32px
+        );
+        color: var(--ink);
+        margin: 0;
+        padding: 3rem 1.5rem;
+        min-height: 100vh;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 900;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1;
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        margin: 0 0 2rem;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--accent);
+      }
+
+      #search-form {
+        display: flex;
+        gap: 0.75rem;
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--ink);
+        padding: 1.25rem 0;
+        margin-bottom: 1.5rem;
+      }
+
+      #user-id-input {
+        flex: 1;
+        font: inherit;
+        padding: 0.6rem 0.9rem;
+        border: 1px solid var(--ink);
+        border-radius: 0;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      #user-id-input:focus {
+        outline: 3px solid var(--accent);
+        outline-offset: 1px;
+      }
+
+      button {
+        font: inherit;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0.6rem 1.5rem;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--paper);
+        cursor: pointer;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+
+      button:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      #message.status {
+        color: var(--ink);
+        opacity: 0.6;
+      }
+
+      #message.error {
+        color: var(--accent);
+        font-weight: 500;
+        border-left: 4px solid var(--accent);
+        padding-left: 0.75rem;
+      }
+
+      .result-section {
+        margin-bottom: 2.5rem;
+        animation: rise 0.35s ease both;
+      }
+
+      .result-section h2 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin: 0 0 0.75rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .kv-list {
+        list-style: none;
+        margin: 0 0 1.25rem;
+        padding: 0.75rem 1rem;
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid var(--rule);
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+
+      .kv-key {
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>User Lookup</h1>
+      <p class="subtitle">jsonplaceholder records · HW5 · 2-1b</p>
+
+      <form id="search-form">
+        <input
+          id="user-id-input"
+          type="text"
+          inputmode="numeric"
+          placeholder="Enter a user ID (e.g. 2)"
+          aria-label="User ID"
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <p id="message" role="status"></p>
+      <div id="results"></div>
+    </main>
+
+    <script src="question2-1b.js"></script>
+  </body>
+</html>
