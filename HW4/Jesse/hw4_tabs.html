@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW4 Tabs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    .tabs {
+      border: 2px solid #ccc;
+    }
+
+    .tab-buttons {
+      background-color: #f1f1f1;
+      border-bottom: 2px solid #ccc;
+    }
+
+    button {
+      border: none;
+      padding: 18px 28px;
+      background-color: inherit;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    button.active {
+      background-color: #ccc;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 30px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <div class="tab-buttons">
+      <button data-city="London">London</button>
+      <button data-city="Paris">Paris</button>
+      <button data-city="Tokyo">Tokyo</button>
+    </div>
+
+    <div class="tab-content" id="London">
+      <h2>London</h2>
+      <p>London is the capital city of England</p>
+    </div>
+
+    <div class="tab-content" id="Paris">
+      <h2>Paris</h2>
+      <p>Paris is the capital of France.</p>
+    </div>
+
+    <div class="tab-content" id="Tokyo">
+      <h2>Tokyo</h2>
+      <p>Tokyo is the capital of Japan.</p>
+    </div>
+  </div>
+
+  <script src="./hw4_tabs.js"></script>
+</body>
+</html>
