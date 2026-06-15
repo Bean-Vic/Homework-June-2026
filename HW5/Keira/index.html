@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSONPlaceholder Practice</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js?v=2" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <h1>Sample Test Page</h1>
+
+      <section class="panel" aria-labelledby="part-1-title">
+        <h2 id="part-1-title">Part 1</h2>
+        <button id="load-users-button" type="button">Load Users</button>
+        <p id="users-error" class="message error" role="alert"></p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">City</th>
+              </tr>
+            </thead>
+            <tbody id="users-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="part-2-title">
+        <h2 id="part-2-title">Part 2</h2>
+        <form id="search-form" class="search-form">
+          <label class="visually-hidden" for="user-id-input">User ID</label>
+          <input
+            id="user-id-input"
+            type="number"
+            min="1"
+            placeholder="Enter User ID"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+        <p id="search-error" class="message error" role="alert"></p>
+
+        <h3>User Info</h3>
+        <ul id="user-info-list" class="data-list"></ul>
+
+        <h3>User Posts</h3>
+        <ul id="user-posts-list" class="data-list stacked"></ul>
+
+        <h3>User Todos</h3>
+        <ul id="user-todos-list" class="data-list stacked"></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="part-3-title">
+        <h2 id="part-3-title">Part 3</h2>
+        <button id="delayed-request-button" type="button">
+          Send Delayed Request
+        </button>
+        <p id="delayed-status" class="message status" aria-live="polite"></p>
+      </section>
+    </main>
+  </body>
+</html>
