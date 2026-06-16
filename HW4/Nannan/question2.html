@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabs</title>
+  <style>
+    /* tab 按钮区域 */
+    .tab-bar {
+      display: flex;
+      background-color: #e0e0e0;
+      border: 1px solid #ccc;
+      border-bottom: none;
+    }
+    .tab-bar button {
+      padding: 14px 24px;
+      font-size: 18px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: #555;
+    }
+    .tab-bar button.active {
+      background-color: #f5f5f5;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* 内容区域 */
+    .tab-content {
+      border: 1px solid #ccc;
+      padding: 24px;
+      min-height: 160px;
+      background-color: #fff;
+    }
+    .tab-content div {
+      display: none;
+    }
+    .tab-content div.active {
+      display: block;
+    }
+    .tab-content h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    .tab-content p {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- tab 按钮 -->
+  <div class="tab-bar" id="tab-bar">
+    <button data-index="0">London</button>
+    <button data-index="1">Paris</button>
+    <button data-index="2">Tokyo</button>
+  </div>
+
+  <!-- 内容区 -->
+  <div class="tab-content" id="tab-content">
+    <div>
+      <h2>London</h2>
+      <p>London is the capital city of England.</p>
+    </div>
+    <div>
+      <h2>Paris</h2>
+      <p>Paris is the capital of France.</p>
+    </div>
+    <div>
+      <h2>Tokyo</h2>
+      <p>Tokyo is the capital of Japan.</p>
+    </div>
+  </div>
+
+  <script>
+    const tabBar = document.getElementById("tab-bar");
+    const tabContent = document.getElementById("tab-content");
+
+    // 初始化：默认选中第一个
+    function setActive(index) {
+      // 更新按钮状态
+      tabBar.querySelectorAll("button").forEach((btn, i) => {
+        btn.classList.toggle("active", i === index);
+      });
+      // 更新内容显示
+      tabContent.querySelectorAll("div").forEach((div, i) => {
+        div.classList.toggle("active", i === index);
+      });
+    }
+
+    setActive(0); // 默认 London
+
+    // 事件委托：监听整个 tab-bar
+    tabBar.addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") {
+        const index = Number(e.target.dataset.index);
+        setActive(index);
+      }
+    });
+  </script>
+</body>
+</html>
