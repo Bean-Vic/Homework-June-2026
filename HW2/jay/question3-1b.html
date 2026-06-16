@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW2 - Layout with Grid</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: serif;
+        color: #555;
+      }
+
+      /* One grid defines the whole page using named areas.
+         - 3 columns: fixed nav | flexible article | fixed aside
+         - 3 rows:   header (auto) | content (fills space) | footer (auto)
+         header and footer span all 3 columns. */
+      .page {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 220px 1fr 220px;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+          "header  header  header"
+          "nav     article aside"
+          "footer  footer  footer";
+      }
+
+      header {
+        grid-area: header;
+        background-color: #9bbb59;
+        padding: 30px 20px;
+        min-height: 160px;
+      }
+
+      nav {
+        grid-area: nav;
+        background-color: #f1f1e0;
+        padding: 20px;
+      }
+
+      article {
+        grid-area: article;
+        background-color: #ffffff;
+        padding: 20px;
+      }
+
+      aside {
+        grid-area: aside;
+        background-color: #f1f1e0;
+        padding: 20px;
+      }
+
+      footer {
+        grid-area: footer;
+        background-color: #ffff66;
+        padding: 20px;
+        min-height: 70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>Header</header>
+      <nav>Nav</nav>
+      <article>Article</article>
+      <aside>Aside</aside>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

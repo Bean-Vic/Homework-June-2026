@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW2 - Layout with Flexbox</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: serif;
+        color: #555;
+      }
+
+      /* The page is a vertical (column) flex container:
+         header on top, the content row in the middle, footer at the bottom. */
+      .page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background-color: #9bbb59;
+        padding: 30px 20px;
+        min-height: 160px;
+      }
+
+      /* The middle row is a horizontal flex container holding nav, article, aside. */
+      .content {
+        display: flex;
+        flex: 1; /* grow to fill the space between header and footer */
+      }
+
+      nav,
+      aside {
+        background-color: #f1f1e0;
+        width: 220px;       /* fixed side columns */
+        flex-shrink: 0;
+        padding: 20px;
+      }
+
+      article {
+        background-color: #ffffff;
+        flex: 1;            /* center column takes the remaining width */
+        padding: 20px;
+      }
+
+      footer {
+        background-color: #ffff66;
+        padding: 20px;
+        min-height: 70px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>Header</header>
+
+      <div class="content">
+        <nav>Nav</nav>
+        <article>Article</article>
+        <aside>Aside</aside>
+      </div>
+
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
