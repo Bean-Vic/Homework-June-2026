@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW5 Question 2-1c: Delayed Request</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f5f0e6;
+        --ink: #1f1b16;
+        --accent: #b3401e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "IBM Plex Mono", monospace;
+        background: var(--paper);
+        background-image: repeating-linear-gradient(
+          transparent,
+          transparent 31px,
+          rgba(31, 27, 22, 0.04) 32px
+        );
+        color: var(--ink);
+        margin: 0;
+        padding: 3rem 1.5rem;
+        min-height: 100vh;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 900;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1;
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        margin: 0 0 2rem;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--accent);
+      }
+
+      .panel {
+        border-top: 3px solid var(--ink);
+        border-bottom: 1px solid var(--ink);
+        padding: 1.25rem 0;
+      }
+
+      button {
+        font: inherit;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0.6rem 1.5rem;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--paper);
+        cursor: pointer;
+        transition: background 0.15s ease, border-color 0.15s ease;
+      }
+
+      button:hover:enabled {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: wait;
+      }
+
+      #message {
+        min-height: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      #message.status {
+        opacity: 0.7;
+      }
+
+      #message.error {
+        color: var(--accent);
+        font-weight: 500;
+        border-left: 4px solid var(--accent);
+        padding-left: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Delayed Request</h1>
+      <p class="subtitle">jsonplaceholder records · HW5 · 2-1c</p>
+
+      <div class="panel">
+        <button id="request-button" type="button">Send Request</button>
+        <p id="message" role="status"></p>
+      </div>
+    </main>
+
+    <script src="question2-1c.js"></script>
+  </body>
+</html>
