@@ -1,0 +1,37 @@
+body {
+    border: 2px solid #ccc;
+    max-width: 600px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.tabs-container {
+    background-color: #f1f1f1;
+    display: flex;
+    border-bottom: 2px solid #ccc;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 14px 24px;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+button.active {
+    background-color: #ccc;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+}
+
+.content.active {
+    display: block;
+}
