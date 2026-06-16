@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript 3 - Homework</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      padding: 24px;
+      color: #222;
+    }
+
+    .section {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+
+    h2 { font-size: 1.1rem; margin-bottom: 14px; }
+
+    button {
+      padding: 6px 14px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    button:hover { background: #eee; }
+
+    #load-btn { margin-bottom: 12px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th { background: #efefef; font-weight: bold; }
+    tr:hover td { background: #f0f4ff; }
+
+    .search-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    #user-id-input {
+      padding: 6px 10px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      width: 180px;
+    }
+
+    .error-msg {
+      color: red;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .result-section h3 {
+      font-size: 0.95rem;
+      font-weight: bold;
+      margin: 12px 0 6px;
+    }
+
+    ul.data-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.data-list li {
+      font-size: 0.85rem;
+      padding: 2px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    ul.data-list li span.key { font-weight: bold; }
+
+    #status-msg {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      background: #eee;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Part 1 -->
+  <div class="section">
+    <h2>Part 1</h2>
+    <button id="load-btn">Load Users</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody id="user-table-body"></tbody>
+    </table>
+    <p id="part1-error" class="error-msg"></p>
+  </div>
+
+  <!-- Part 2 -->
+  <div class="section">
+    <h2>Part 2</h2>
+    <div class="search-row">
+      <input type="text" id="user-id-input" placeholder="Enter User ID" />
+      <button id="search-btn">Search</button>
+    </div>
+    <p id="part2-error" class="error-msg"></p>
+    <div id="part2-results">
+      <div class="result-section">
+        <h3>User Info</h3>
+        <ul id="user-info-list" class="data-list"></ul>
+      </div>
+      <div class="result-section">
+        <h3>User Posts</h3>
+        <ul id="user-posts-list" class="data-list"></ul>
+      </div>
+      <div class="result-section">
+        <h3>User Todos</h3>
+        <ul id="user-todos-list" class="data-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Part 3 -->
+  <div class="section">
+    <h2>Part 3</h2>
+    <button id="delayed-btn">Send Delayed Request</button>
+    <span id="status-msg" style="display:none;"></span>
+  </div>
+
+  <footer>Sample web page</footer>
+
+  <script>
+    const BASE = "https://jsonplaceholder.typicode.com";
+
+    // ─── Part 1 ───────────────────────────────────────────────
+    document.getElementById("load-btn").addEventListener("click", async () => {
+      const tbody = document.getElementById("user-table-body");
+      const errEl = document.getElementById("part1-error");
+      tbody.innerHTML = "";
+      errEl.textContent = "";
+
+      try {
+        const res = await fetch(`${BASE}/users`);
+        if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
+        const users = await res.json();
+
+        users.forEach(user => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.address.city}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        errEl.textContent = `Error loading users: ${err.message}`;
+      }
+    });
+
+    // ─── Part 2 ───────────────────────────────────────────────
+    function renderObject(ul, obj, prefix = "") {
+      for (const [k, v] of Object.entries(obj)) {
+        if (v !== null && typeof v === "object" && !Array.isArray(v)) {
+          renderObject(ul, v, prefix ? `${prefix}.${k}` : k);
+        } else {
+          const li = document.createElement("li");
+          const fullKey = prefix ? `${prefix}.${k}` : k;
+          li.innerHTML = `<span class="key">${fullKey}:</span> ${v}`;
+          ul.appendChild(li);
+        }
+      }
+    }
+
+    function renderList(ulId, items) {
+      const ul = document.getElementById(ulId);
+      ul.innerHTML = "";
+
+      if (!Array.isArray(items)) {
+        renderObject(ul, items);
+        return;
+      }
+
+      items.forEach((item, idx) => {
+        const header = document.createElement("li");
+        header.innerHTML = `<span class="key">── Item ${idx + 1} ──</span>`;
+        ul.appendChild(header);
+        renderObject(ul, item);
+      });
+    }
+
+    document.getElementById("search-btn").addEventListener("click", async () => {
+      const input = document.getElementById("user-id-input");
+      const errEl = document.getElementById("part2-error");
+      const id = input.value.trim();
+
+      errEl.textContent = "";
+      ["user-info-list", "user-posts-list", "user-todos-list"].forEach(listId => {
+        document.getElementById(listId).innerHTML = "";
+      });
+
+      if (!id) {
+        errEl.textContent = "Please enter a User ID.";
+        return;
+      }
+
+      try {
+        const [userRes, postsRes, todosRes] = await Promise.all([
+          fetch(`${BASE}/users/${id}`),
+          fetch(`${BASE}/posts?userId=${id}`),
+          fetch(`${BASE}/todos?userId=${id}`)
+        ]);
+
+        const user = await userRes.json();
+        const posts = await postsRes.json();
+        const todos = await todosRes.json();
+
+        if (!user || Object.keys(user).length === 0) {
+          errEl.textContent = "User was not found. Please try another user ID";
+          input.value = "";
+          return;
+        }
+
+        renderList("user-info-list", user);
+        renderList("user-posts-list", posts);
+        renderList("user-todos-list", todos);
+
+      } catch (err) {
+        errEl.textContent = `Error: ${err.message}`;
+      }
+    });
+
+    // ─── Part 3 ───────────────────────────────────────────────
+    async function delayedRequest(url = `${BASE}/users/1`) {
+      const statusEl = document.getElementById("status-msg");
+      statusEl.style.display = "inline-block";
+      statusEl.textContent = "Waiting …";
+
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
+        const data = await res.json();
+        console.log(JSON.stringify(data));
+        statusEl.textContent = "Check console for the data";
+      } catch (err) {
+        statusEl.textContent = `Error: ${err.message}`;
+      }
+    }
+
+    document.getElementById("delayed-btn").addEventListener("click", () => {
+      delayedRequest();
+    });
+  </script>
+</body>
+</html>
