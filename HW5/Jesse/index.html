@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample web page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Sample web page</h1>
+
+    <section>
+      <h2>Part 1</h2>
+      <button id="load-users">Load Users</button>
+      <p id="users-message"></p>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody id="users-table"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Part 2</h2>
+      <input id="user-id" type="number" min="1" placeholder="Enter User ID">
+      <button id="search-user">Search</button>
+      <p id="message"></p>
+
+      <h3>User Info</h3>
+      <ul id="user-info"></ul>
+
+      <h3>User Posts</h3>
+      <ul id="user-posts"></ul>
+
+      <h3>User Todos</h3>
+      <ul id="user-todos"></ul>
+    </section>
+
+    <section>
+      <h2>Part 3</h2>
+      <button id="delay-request">Send Delayed Request</button>
+      <p id="delay-message"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
