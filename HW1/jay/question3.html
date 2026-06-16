@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration Form</title>
+  </head>
+
+  <body>
+    <h1>Registration Form</h1>
+
+    <form>
+      <fieldset>
+        <legend>Personal Information</legend>
+        <p>
+          <label for="name">Name</label><br />
+          <input type="text" id="name" name="name" />
+        </p>
+
+        <p>
+          <label for="email">Email</label><br />
+          <input type="email" id="email" name="email" />
+        </p>
+
+        <p>
+          <label for="address">Address</label><br />
+          <input type="text" id="address" name="address" />
+        </p>
+
+        <p>
+          <label for="phone">Phone</label><br />
+          <input type="tel" id="phone" name="phone" />
+        </p>
+
+        <p>
+          <label for="age">Age</label><br />
+          <input type="number" id="age" name="age" min="0" />
+        </p>
+
+        <div>
+          <p>Gender</p>
+          <p>
+            <input type="radio" id="gender-male" name="gender" value="male" />
+            <label for="gender-male">Male</label>
+          </p>
+          <p>
+            <input
+              type="radio"
+              id="gender-female"
+              name="gender"
+              value="female"
+            />
+            <label for="gender-female">Female</label>
+          </p>
+          <p>
+            <input type="radio" id="gender-other" name="gender" value="other" />
+            <label for="gender-other">Other</label>
+          </p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Workshop Preferences</legend>
+
+        <p>
+          <label for="session-date">Preferred Session Date</label><br />
+          <input type="date" id="session-date" name="session-date" />
+        </p>
+
+        <p>
+          <label for="tshirt-size">T-shirt Size</label><br />
+          <select id="tshirt-size" name="tshirt-size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="x-large">X-large</option>
+          </select>
+        </p>
+
+        <div>
+          <p>Experience Level</p>
+          <p>
+            <input
+              type="radio"
+              id="exp-beginner"
+              name="experience"
+              value="beginner"
+            />
+            <label for="exp-beginner">Beginner</label>
+          </p>
+          <p>
+            <input
+              type="radio"
+              id="exp-intermediate"
+              name="experience"
+              value="intermediate"
+            />
+            <label for="exp-intermediate">Intermediate</label>
+          </p>
+          <p>
+            <input
+              type="radio"
+              id="exp-advanced"
+              name="experience"
+              value="advanced"
+            />
+            <label for="exp-advanced">Advanced</label>
+          </p>
+        </div>
+      </fieldset>
+
+      <p>
+        <label for="upload">Upload Files</label><br />
+        <input type="file" id="upload" name="upload" multiple />
+      </p>
+
+      <p>
+        <a
+          href="https://example.com/"
+          target="_blank"
+          rel="noreferrer nofollow"
+        >
+          Visit our Community Hub
+        </a>
+      </p>
+
+      <p>
+        <button type="submit">Submit</button>
+      </p>
+    </form>
+  </body>
+</html>
