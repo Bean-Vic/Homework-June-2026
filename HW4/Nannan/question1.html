@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Table</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <table id="table"></table>
+
+  <script>
+    const tableInfo = {
+      tableHeader: ["Student Name", "Age", "Phone", "Address"],
+      tableContent: [
+        { "Student Name": "John", Age: 19, Phone: "455-983-0903", Address: "123 Ave, San Francisco, CA, 94011" },
+        { "Student Name": "Alex", Age: 21, Phone: "455-983-0912", Address: "456 Rd, San Francisco, CA, 94012" },
+        { "Student Name": "Josh", Age: 22, Phone: "455-345-0912", Address: "789 Dr, Newark, CA, 94016" },
+        { "Student Name": "Matt", Age: 23, Phone: "321-345-0912", Address: "223 Dr, Sunnyvale, CA, 94016" },
+      ],
+    };
+
+    const { tableHeader, tableContent } = tableInfo;
+    const table = document.getElementById("table");
+
+    const thead = table.createTHead();
+    const headerRow = thead.insertRow();
+    tableHeader.forEach(header => {
+      const th = document.createElement("th");
+      th.textContent = header;
+      headerRow.appendChild(th);
+    });
+
+    const tbody = table.createTBody();
+    tableContent.forEach(row => {
+      const tr = tbody.insertRow();
+      tableHeader.forEach(header => {
+        const td = tr.insertCell();
+        td.textContent = row[header];
+      });
+    });
+  </script>
+</body>
+</html>
