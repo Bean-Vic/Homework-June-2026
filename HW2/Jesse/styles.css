@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f0f2f5;
+  color: #777;
+  font-family: sans-serif;
+}
+
+main {
+  width: min(1100px, 92vw);
+  margin: 32px auto;
+}
+
+h1 {
+  margin: 0 0 14px;
+  color: #222;
+  font-size: 24px;
+}
+
+.panel {
+  margin-bottom: 32px;
+}
+
+.layout {
+  min-height: 360px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.layout > *,
+.content-row > * {
+  padding: 28px;
+}
+
+header {
+  background: #98d322;
+}
+
+nav,
+aside {
+  background: #f5f5dd;
+}
+
+article {
+  background: #fff;
+}
+
+footer {
+  background: #ff0;
+}
+
+.flex-layout,
+.content-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-row {
+  flex: 1;
+  flex-direction: row;
+}
+
+.content-row nav,
+.content-row aside {
+  flex: 0 0 20%;
+}
+
+.content-row article {
+  flex: 1;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template: 110px 1fr 70px / 20% 1fr 20%;
+  grid-template-areas:
+    "header header header"
+    "nav article aside"
+    "footer footer footer";
+}
+
+.grid-layout header {
+  grid-area: header;
+}
+
+.grid-layout nav {
+  grid-area: nav;
+}
+
+.grid-layout article {
+  grid-area: article;
+}
+
+.grid-layout aside {
+  grid-area: aside;
+}
+
+.grid-layout footer {
+  grid-area: footer;
+}
+
+.card-stage {
+  display: flex;
+  min-height: 420px;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-card {
+  display: flex;
+  width: min(430px, 100%);
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 12px #0002;
+}
+
+.name-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: transform .2s;
+}
+
+.name-card img:hover {
+  transform: scale(1.15);
+}
+
+.profile {
+  flex: 1;
+}
+
+.profile h2,
+.profile p {
+  margin: 0;
+}
+
+.profile h2 {
+  color: #111;
+  font-size: 20px;
+}
+
+.profile p {
+  margin-top: 4px;
+  color: #555;
+}
+
+button {
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 24px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.tailwind-link {
+  text-align: center;
+}
+
+.tailwind-link a {
+  color: #007bff;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .content-row,
+  .name-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-row nav,
+  .content-row aside {
+    flex-basis: auto;
+  }
+
+  .grid-layout {
+    grid-template: repeat(5, auto) / 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "article"
+      "aside"
+      "footer";
+  }
+
+  .layout {
+    min-height: auto;
+  }
+
+  button {
+    width: 100%;
+  }
+}
