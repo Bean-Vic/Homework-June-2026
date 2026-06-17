@@ -1,0 +1,171 @@
+/* ============================================ */
+/* Question 1: Holy Grail Layout                */
+/* ============================================ */
+#question1 header,
+#question1 nav,
+#question1 article,
+#question1 aside,
+#question1 footer {
+  padding: 20px;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  color: #555;
+  box-sizing: border-box;
+}
+
+#question1 header {
+  background-color: #8bc34a;
+  height: 150px;
+}
+
+#question1 nav     { background-color: #f5f5dc; }
+#question1 article { background-color: #ffffff; }
+#question1 aside   { background-color: #f5f5dc; }
+
+#question1 footer {
+  background-color: #ffeb3b;
+  height: 80px;
+}
+
+/* -------- Flexbox -------- */
+#question1.flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#question1.flex-container .main {
+  display: flex;
+  flex: 1;
+}
+
+#question1.flex-container nav     { width: 200px; flex-shrink: 0; }
+#question1.flex-container article { flex: 1; min-height: 500px; }
+#question1.flex-container aside   { width: 200px; flex-shrink: 0; }
+
+/* -------- Grid -------- */
+#question1.grid-container {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "nav    article aside"
+    "footer footer footer";
+}
+
+#question1.grid-container header  { grid-area: header; }
+#question1.grid-container nav     { grid-area: nav; }
+#question1.grid-container article { grid-area: article; min-height: 500px; }
+#question1.grid-container aside   { grid-area: aside; }
+#question1.grid-container footer  { grid-area: footer; }
+
+
+/* ============================================ */
+/* Question 2: Name Card (Responsive)           */
+/* ============================================ */
+
+#question2 {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#question2 .card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 500px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#question2 .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+#question2 .avatar:hover {
+  transform: scale(1.1);
+}
+
+#question2 .name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+#question2 .title {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+#question2 .follow-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#question2 .follow-btn:hover {
+  background-color: #0056b3;
+}
+
+/* -------- Flexbox -------- */
+#question2.flex-card .card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#question2.flex-card .info {
+  flex: 1;
+}
+
+/* -------- Grid -------- */
+#question2.grid-card .card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  #question2.flex-card .card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #question2.flex-card .follow-btn {
+    width: 100%;
+  }
+
+  #question2.grid-card .card {
+    grid-template-columns: 1fr;  
+    justify-items: center;
+    text-align: center;
+  }
+
+  #question2.grid-card .follow-btn {
+    width: 100%;
+  }
+}
