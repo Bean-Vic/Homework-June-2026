@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <main>
+      <h1>Registration Form</h1>
+
+      <form action="#" method="post">
+        <div>
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="fullName" required />
+        </div>
+
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div>
+          <label for="session-date">Preferred Session Date</label>
+          <input type="date" id="session-date" name="sessionDate" />
+        </div>
+
+        <div>
+          <label for="t-shirt-size">T-shirt Size</label>
+          <select id="t-shirt-size" name="tShirtSize">
+            <option value="">Please select</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="x-large">X-large</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Experience Level</legend>
+
+          <div>
+            <input
+              type="radio"
+              id="beginner"
+              name="experienceLevel"
+              value="beginner"
+            />
+            <label for="beginner">Beginner</label>
+          </div>
+
+          <div>
+            <input
+              type="radio"
+              id="intermediate"
+              name="experienceLevel"
+              value="intermediate"
+            />
+            <label for="intermediate">Intermediate</label>
+          </div>
+
+          <div>
+            <input
+              type="radio"
+              id="advanced"
+              name="experienceLevel"
+              value="advanced"
+            />
+            <label for="advanced">Advanced</label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="resume">Upload Your File</label>
+          <input type="file" id="resume" name="resume" />
+        </div>
+
+        <p>
+          <a href="https://example.com/" target="_blank" rel="noreferrer">
+            Visit our Community Hub
+          </a>
+        </p>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+    </main>
+  </body>
+</html>
