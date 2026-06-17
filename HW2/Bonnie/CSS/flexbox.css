@@ -1,0 +1,34 @@
+
+.container {
+    height: 100vh;
+}
+
+header {
+    background: yellowgreen;
+    height: 100px;
+}
+
+.main {
+    display: flex;
+    height: 400px;
+}
+
+nav {
+    width: 20%;
+    background: beige;
+}
+
+article {
+    width: 60%;
+}
+
+aside {
+    width: 20%;
+    background: beige;
+}
+
+footer {
+    background: yellow;
+    height: 80px;
+}
+
