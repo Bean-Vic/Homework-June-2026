@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #222;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 220px 1fr 220px;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+          "header header header"
+          "nav main aside"
+          "footer footer footer";
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      nav {
+        grid-area: nav;
+      }
+
+      main {
+        grid-area: main;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+
+      header,
+      footer {
+        padding: 24px;
+        text-align: center;
+        color: white;
+        background: #2f5d8c;
+      }
+
+      nav,
+      aside {
+        padding: 24px;
+        background: #edf2f7;
+      }
+
+      main {
+        padding: 24px;
+        background: #ffffff;
+      }
+
+      @media screen and (max-width: 600px) {
+        .page {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Grid Layout</h1>
+      </header>
+
+      <nav>
+        <h2>Navigation</h2>
+        <p>Home</p>
+        <p>About</p>
+        <p>Contact</p>
+      </nav>
+
+      <main>
+        <h2>Main Content</h2>
+        <p>
+          This page uses <strong>display: grid</strong> to create the same
+          layout with named grid areas.
+        </p>
+      </main>
+
+      <aside>
+        <h2>Aside</h2>
+        <p>Extra information can go here.</p>
+      </aside>
+
+      <footer>
+        <p>Footer</p>
+      </footer>
+    </div>
+  </body>
+</html>
