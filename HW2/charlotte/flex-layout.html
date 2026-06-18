@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Layout</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #222;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header,
+      footer {
+        padding: 24px;
+        text-align: center;
+        color: white;
+        background: #2f5d8c;
+      }
+
+      .content {
+        flex: 1;
+        display: flex;
+      }
+
+      nav,
+      aside {
+        width: 220px;
+        padding: 24px;
+        background: #edf2f7;
+      }
+
+      main {
+        flex: 1;
+        padding: 24px;
+        background: #ffffff;
+      }
+
+      @media screen and (max-width: 600px) {
+        .content {
+          flex-direction: column;
+        }
+
+        nav,
+        aside {
+          width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Flexbox Layout</h1>
+      </header>
+
+      <div class="content">
+        <nav>
+          <h2>Navigation</h2>
+          <p>Home</p>
+          <p>About</p>
+          <p>Contact</p>
+        </nav>
+
+        <main>
+          <h2>Main Content</h2>
+          <p>
+            This page uses <strong>display: flex</strong> to create a header,
+            sidebar, main content area, aside section, and footer.
+          </p>
+        </main>
+
+        <aside>
+          <h2>Aside</h2>
+          <p>Extra information can go here.</p>
+        </aside>
+      </div>
+
+      <footer>
+        <p>Footer</p>
+      </footer>
+    </div>
+  </body>
+</html>
