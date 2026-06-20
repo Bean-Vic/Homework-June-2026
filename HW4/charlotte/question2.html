@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Tabs</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .tabs {
+        display: flex;
+        background: #f1f1f1;
+        border: 1px solid #cccccc;
+      }
+
+      .tab-button {
+        border: 0;
+        padding: 14px 18px;
+        font-size: 16px;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .tab-button:hover {
+        background: #dddddd;
+      }
+
+      .tab-button.active {
+        background: #cccccc;
+      }
+
+      .tab-content {
+        display: none;
+        padding: 20px;
+        border: 1px solid #cccccc;
+        border-top: 0;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tabs" id="tabs">
+      <button class="tab-button active" data-city="London">London</button>
+      <button class="tab-button" data-city="Paris">Paris</button>
+      <button class="tab-button" data-city="Tokyo">Tokyo</button>
+    </div>
+
+    <div class="tab-content active" data-city-content="London">
+      <h2>London</h2>
+      <p>London is the capital city of England</p>
+    </div>
+
+    <div class="tab-content" data-city-content="Paris">
+      <h2>Paris</h2>
+      <p>Paris is the capital of France.</p>
+    </div>
+
+    <div class="tab-content" data-city-content="Tokyo">
+      <h2>Tokyo</h2>
+      <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <script src="./question2.js"></script>
+  </body>
+</html>
