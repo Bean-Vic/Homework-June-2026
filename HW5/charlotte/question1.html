@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW5 API Practice</title>
+    <link rel="stylesheet" href="./question1.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1>HW5 API Practice</h1>
+
+      <section class="panel">
+        <div class="section-header">
+          <h2>Part 1: Users Table</h2>
+          <button id="loadUsersButton" type="button">Load Users</button>
+        </div>
+        <p id="usersStatus" class="status">Click the button to load users.</p>
+        <div id="usersTableArea" class="table-area"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Part 2: Search User Details</h2>
+        <form id="searchForm" class="search-form">
+          <label for="userIdInput">User ID</label>
+          <input
+            id="userIdInput"
+            type="number"
+            min="1"
+            placeholder="Enter a user ID"
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+        <p id="searchStatus" class="status"></p>
+        <div id="searchResults" class="results"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Part 3: Delayed Request</h2>
+        <button id="delayedRequestButton" type="button">
+          Run Delayed Request
+        </button>
+        <p id="delayedRequestStatus" class="status">
+          Click the button to fetch user 1 after 2 seconds.
+        </p>
+      </section>
+    </main>
+
+    <script src="./question1.js"></script>
+  </body>
+</html>
