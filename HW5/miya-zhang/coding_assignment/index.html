@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HW5 JS Assignment</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        background: #f9f9f9;
+      }
+      .card {
+        background: white;
+        padding: 24px;
+        margin-bottom: 24px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f1f1f1;
+      }
+      ul {
+        list-style-type: disc;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Part 1</h2>
+      <button id="load-users-btn">Load Users</button>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Part 2</h2>
+      <input type="text" id="user-id-input" placeholder="Enter User ID" />
+      <button id="search-btn">Search</button>
+      <div
+        id="part2-error"
+        style="color: red; margin-top: 10px; font-weight: bold"
+      ></div>
+
+      <div id="part2-content" style="margin-top: 20px">
+        <h3>User Info</h3>
+        <ul id="user-info-list"></ul>
+        <h3>User Posts</h3>
+        <ul id="user-posts-list"></ul>
+        <h3>User Todos</h3>
+        <ul id="user-todos-list"></ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Part 3</h2>
+      <button id="delayed-req-btn">Send Delayed Request</button>
+      <span id="part3-msg" style="margin-left: 10px; font-weight: bold"></span>
+    </div>
+
+    <script src="part1.js"></script>
+    <script src="part2.js"></script>
+    <script src="part3.js"></script>
+  </body>
+</html>
