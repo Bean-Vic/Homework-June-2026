@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Name Card</title>
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #f0f2f5;
+        font-family: sans-serif;
+      }
+
+      .page {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        background-color: white;
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        transition: 0.3s;
+      }
+
+      .avatar:hover {
+        transform: scale(1.12);
+      }
+
+      .info {
+        flex: 1;
+      }
+
+      .info h2 {
+        margin: 0;
+      }
+
+      .info p {
+        margin: 6px 0 0;
+        color: gray;
+      }
+
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 22px;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 600px) {
+        .card {
+          width: 80%;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="card">
+        <img class="avatar" src="https://i.pravatar.cc/80" alt="avatar" />
+
+        <div class="info">
+          <h2>Miya Zhang</h2>
+          <p>Web Design Student</p>
+        </div>
+
+        <button>Follow</button>
+      </div>
+    </div>
+  </body>
+</html>
