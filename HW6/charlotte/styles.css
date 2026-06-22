@@ -1,0 +1,195 @@
+:root {
+  color: #1f2933;
+  background: #f4f7f6;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ffffff;
+  background: #2563eb;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 40px;
+}
+
+header {
+  max-width: 960px;
+  margin: 0 auto 24px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 6px;
+  font-size: 36px;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 20px;
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+.panel {
+  border: 1px solid #d8e0df;
+  border-radius: 8px;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(31, 41, 51, 0.08);
+}
+
+.counter-panel {
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cart-form {
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) 120px auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #1f2933;
+  background: #ffffff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 14px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+  background: #f8fafc;
+}
+
+.empty-cell {
+  height: 96px;
+  color: #64748b;
+  text-align: center;
+}
+
+.delete-button {
+  padding: 8px 10px;
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.delete-button:hover {
+  background: #fecaca;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 24px;
+  }
+
+  .layout,
+  .cart-form {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    display: grid;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+}
