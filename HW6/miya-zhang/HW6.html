@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HW6 - Full Assignment</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.6/babel.min.js"></script>
+
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+        background-color: #fafafa;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .my-box {
+        width: 100%;
+        max-width: 450px;
+        background: white;
+        border: 1px solid #1a1a1a;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+      .my-box h2 {
+        text-align: center;
+        margin: 30px 0;
+        color: #222;
+      }
+      /* Part 1 样式 */
+      .counter-display {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      /* Part 2 样式 */
+      .input-area {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        border-bottom: 1px solid #1a1a1a;
+      }
+
+      .input-area select,
+      .qty-input,
+      .btn {
+        border: 1px solid #1a1a1a;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 1rem;
+        background-color: #fff;
+      }
+
+      .input-area select {
+        flex: 2;
+      }
+      .qty-input {
+        flex: 1;
+        text-align: center;
+      }
+      .btn {
+        flex: 1;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .btn:hover {
+        background-color: #f0f0f0;
+      }
+
+      .cart-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .cart-table th {
+        text-align: left;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .cart-table td {
+        padding: 15px 20px;
+        font-size: 1.1rem;
+      }
+
+      .price-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .remove-btn {
+        border: 1px solid #1a1a1a;
+        background: white;
+        border-radius: 4px;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+
+      .remove-btn:hover {
+        background-color: #f9f9f9;
+      }
+
+      .cart-table tfoot td {
+        border-top: 1px solid #1a1a1a;
+        padding: 20px;
+        font-weight: bold;
+      }
+
+      .total-value {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel" data-presets="react,env">
+      const { Component, useState } = React;
+
+      // Part 1
+      const withLocalStorage = (WrappedComponent, keyName) => {
+        return (props) => {
+          let savedData = localStorage.getItem(keyName);
+          let startVal = props.initialValue;
+          if (savedData !== null) {
+            startVal = parseInt(savedData);
+          }
+          const updateStorage = (newVal) => {
+            localStorage.setItem(keyName, newVal);
+          };
+          return (
+            <WrappedComponent
+              initialValue={startVal}
+              updateStorage={updateStorage}
+            />
+          );
+        };
+      };
+
+      class Counter extends Component {
+        constructor(props) {
+          super(props);
+          this.state = { count: this.props.initialValue };
+          this.increase = this.increase.bind(this);
+        }
+
+        increase() {
+          let nextCount = this.state.count + 1;
+          this.setState({ count: nextCount });
+          this.props.updateStorage(nextCount);
+        }
+
+        decrease = () => {
+          let nextCount = this.state.count - 1;
+          this.setState({ count: nextCount });
+          this.props.updateStorage(nextCount);
+        };
+
+        render() {
+          return (
+            <div className="my-box">
+              <h2>Part 1: Counter</h2>
+              <div style={{ padding: "0 20px 20px 20px", textAlign: "center" }}>
+                <p className="counter-display">
+                  Current Value: {this.state.count}
+                </p>
+                <button
+                  onClick={this.increase}
+                  className="btn"
+                  style={{ marginRight: "10px" }}
+                >
+                  Increase
+                </button>
+                <button onClick={this.decrease} className="btn">
+                  Decrease
+                </button>
+              </div>
+            </div>
+          );
+        }
+      }
+
+      const MyCounter = withLocalStorage(Counter, "my_saved_count");
+
+      // Part 2
+
+      const ShoppingCart = () => {
+        const [cart, setCart] = useState([]);
+        const [itemName, setItemName] = useState("Product A");
+        const [qty, setQty] = useState(1);
+
+        const getPrice = (name) => {
+          if (name === "Product A") return 30;
+          if (name === "Product B") return 50;
+          if (name === "Product C") return 20;
+          return 0;
+        };
+
+        const handleAdd = () => {
+          let newCart = [...cart];
+          let found = false;
+          for (let i = 0; i < newCart.length; i++) {
+            if (newCart[i].name === itemName) {
+              newCart[i].qty = newCart[i].qty + parseInt(qty);
+              found = true;
+            }
+          }
+          if (found === false) {
+            newCart.push({
+              name: itemName,
+              qty: parseInt(qty),
+              price: getPrice(itemName),
+            });
+          }
+          setCart(newCart);
+        };
+
+        const handleRemove = (nameToRemove) => {
+          setCart(cart.filter((item) => item.name !== nameToRemove));
+        };
+
+        let total = 0;
+        for (let i = 0; i < cart.length; i++) {
+          total = total + cart[i].price * cart[i].qty;
+        }
+
+        return (
+          <div className="my-box">
+            <h2>Mini Shopping Cart</h2>
+            <div className="input-area">
+              <select
+                value={itemName}
+                onChange={(e) => setItemName(e.target.value)}
+              >
+                <option value="Product A">Product A</option>
+                <option value="Product B">Product B</option>
+                <option value="Product C">Product C</option>
+              </select>
+              <input
+                type="number"
+                value={qty}
+                min="1"
+                onChange={(e) => setQty(e.target.value)}
+                className="qty-input"
+              />
+              <button onClick={handleAdd} className="btn">
+                Add
+              </button>
+            </div>
+            <table className="cart-table">
+              <thead>
+                <tr>
+                  <th colSpan="2">Cart</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cart.map((item, index) => (
+                  <tr key={index}>
+                    <td>
+                      {item.name} x {item.qty}
+                    </td>
+                    <td>
+                      <div className="price-container">
+                        <span>${item.price * item.qty}.00</span>
+                        <button
+                          onClick={() => handleRemove(item.name)}
+                          className="remove-btn"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total:</td>
+                  <td className="total-value">${total}.00</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        );
+      };
+
+      // Main App
+
+      const App = () => {
+        return (
+          <div>
+            <MyCounter initialValue={0} />
+            <ShoppingCart />
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
