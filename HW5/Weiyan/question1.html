@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW5 - Question1</title>
+    <link rel="stylesheet" href="question1.css">
+</head>
+<body>
+    <main>
+        <section class="card" id="part1">
+            <h1>Part 1</h1>
+            <button class="btn" id="load-users-btn">Load Users</button>
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody id="users-tbody">
+                    </tbody>
+            </table>
+        </section>
+
+        <section class="card" id="part2">
+            <h1>Part 2</h1>
+            <div class="search-box">
+                <input type="number" id="user-id-input" placeholder="Enter User ID" class="input-field">
+                <button id="search-btn" class="btn">Search</button>
+            </div>
+
+            <div id="part2-error" class="error-message"></div>
+
+            <div>
+                <h2>User Info</h2>
+                <ul id="user-info-list" class="data-list"></ul>
+
+                <h2>User Posts</h2>
+                <ul id="user-posts-list" class="data-list"></ul>
+
+                <h2>User Todos</h2>
+                <ul id="user-todos-list" class="data-list"></ul>
+            </div>
+        </section>
+
+        <section class="card" id="part3">
+            <h1>Part 3</h1>
+            <button id="delayed-btn" class="btn">Send Delayed Request</button>
+            <p id="part3-status"></p>
+        </section>
+    </main>
+    <script src="question1.js"></script>
+</body>
+</html>
