@@ -10,23 +10,24 @@
     <p >Note: please submit this form at least 14 days before your chosen session.</p>
     <form>
         <fieldset>
-        <legend>personal Details</legend>
+        <legend>Personal Details</legend>
 
         <label for="name">Name</label>
-        <input id="name" type="text" placeholder="Text your name"/>
+        <input id="name" name="name" type="text" placeholder="Text your name"/>
         <br><br>
 
         <label for="address">address</label>
-        <input id="address" type="text" placeholder="Street,City, State"/>
+        <input id="address" name="address" type="text" placeholder="Street,City, State"/>
          <br><br>
 
         <label for="email">Email</label>
-        <input id="email" type="email" placeholder="you@example.com"/>
+        <input id="email" name="email" type="email" placeholder="you@example.com"/>
          <br><br>
 
         <label for="phone">Phone Number</label>
         <input
             id="phone"
+            name="phone"
             type="tel"
             placeholder="123-456-7890"
             required
@@ -36,35 +37,23 @@
         <label for="age">Age</label>
         <input
             id="age"
+            name="age"
             type="number"
             min="1"
             required
         />
 
         <br><br>
-        <label for="gender">Gender</label>
+        <label>Gender</label>
 
-        <select
-            id="gender"
-            name="gender"
-            required
-        >
-            <option value="">
-                Select Gender
-            </option>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
 
-            <option value="male">
-                Male
-            </option>
+        <input type="radio" id="female" name="gender" value="female" >
+        <label for="female">Female</label>
 
-            <option value="female">
-                Female
-            </option>
-
-            <option value="other">
-                Other
-            </option>
-        </select>
+        <input type="radio" id="other" name="gender" value="other" >
+        <label for="other">Other</label>
 
         <br><br>
 
@@ -81,6 +70,7 @@
 
         <input
             id="date"
+            name="date"
             type="date"
             required
         />
@@ -92,6 +82,7 @@
 
         <select
             id="size"
+            name="size"
             required
         >
             <option value="">
@@ -123,6 +114,7 @@
 
     <select
         id="level"
+        name="level"
         required
     >
         <option value="">
@@ -145,27 +137,27 @@
     <br><br>
     <p>Check all that apply:</p>
     <label>
-        <input type="checkbox" name="perferences" value="vegetarian">
+        <input type="checkbox" name="preferences" value="vegetarian">
         Vegetarian
     </label>
     <br>
     <label>
-        <input type="checkbox" name="perferences" value="assiatance">
+        <input type="checkbox" name="preferences" value="assistance">
         Require special assistance 
     </label>
     <br>
     <label>
-        <input type="checkbox" name="perferences" value="previous">
+        <input type="checkbox" name="preferences" value="previous">
         Have previous workshop experience
     </label>
     <br>
     <label>
-        <input type="checkbox" name="perferences" value="weekdays">
+        <input type="checkbox" name="preferences" value="weekdays">
         Available on weekdays
     </label>
     <br>
     <label>
-        <input type="checkbox" name="perferences" value="weekends">
+        <input type="checkbox" name="preferences" value="weekends">
         Available on weekends 
     </label>
 
@@ -184,6 +176,7 @@
 
   <textarea
     id="reason"
+    name="reason"
     rows="5"
     cols="50"
     placeholder="Tell us in 50 words or more"
@@ -192,7 +185,7 @@
   <br><br>
   <label for="relevant">List any relevant skills or experience</label>
   <br>
-  <textarea id="relevent" rows="5" cols="50" placeholder="e.g., woodworking, paintng, coding"></textarea>
+  <textarea id="relevant" name="relevant" rows="5" cols="50" placeholder="e.g., woodworking, painting, coding"></textarea>
 
   <br><br>
   <label for="file">Upload Proof of Residency & ID:</label>
@@ -200,7 +193,7 @@
   </fieldset>
 
     <h2>Available Workshop Sessions</h2>
-    <table border>
+    <table border=1>
         <caption>June 2025 Workshop Schedule</caption>
 
         <tr>
@@ -244,7 +237,6 @@
   <br><br>
 
   <button type="submit">Submit Registration</button>
-</fieldset>
     </form>
 </body>
 </html>

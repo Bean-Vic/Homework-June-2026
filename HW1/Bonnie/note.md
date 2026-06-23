@@ -14,14 +14,13 @@ Page description
 Author information
 
 3. What is the minimal structure of an HTML5 document?
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-</head>
-<body>
-</body>
-</html>
+A minimal HTML5 document includes:
+
+- <!DOCTYPE html> declaration
+- html root element
+- head section for metadata
+- body section for visible content
+
 
 4. What is the difference between <head> and <header> ?
 <head> contains metadata for the broswer
