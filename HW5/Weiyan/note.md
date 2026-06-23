@@ -106,7 +106,7 @@
 
   localStorage and sessionStorage are storage used for browsers, essentially the front-end. localStorage is permanent, while sessionStorage is temporary and gets destroyed as the current browser tab is closed.
 
-  Cookie also remembers state, but it is specifically for client-server communication. In most cases it contains server-side state, such as user authentication or session IDs. localStorage and sessionStorage, however, don't interact with the backend.
+  Cookie also remembers state, but it is specifically for client-server communication. In most cases it contains server-side state, such as user authentication or session ID. localStorage and sessionStorage, however, don't interact with the backend.
 
 ## 16. What is the output of the following code?
 
