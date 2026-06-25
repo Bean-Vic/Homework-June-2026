@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Layout</title>
+
+  <style>
+    .container {
+      width: 90%;
+      margin: 30px auto;
+    }
+
+    header {
+      background-color: yellowgreen;
+      height: 150px;
+      padding: 30px;
+      font-size: 32px;
+      color: gray;
+      font-weight: bold;
+    }
+
+    .main {
+      display: flex;
+      height: 550px;
+    }
+
+    nav {
+      background-color: beige;
+      width: 20%;
+      padding: 30px;
+      font-size: 32px;
+      color: gray;
+      font-weight: bold;
+    }
+
+    article {
+      background-color: white;
+      width: 60%;
+      padding: 30px;
+      font-size: 32px;
+      color: gray;
+      font-weight: bold;
+    }
+
+    aside {
+      background-color: beige;
+      width: 20%;
+      padding: 30px;
+      font-size: 32px;
+      color: gray;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: yellow;
+      height: 70px;
+      padding: 30px;
+      font-size: 32px;
+      color: gray;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>Header</header>
+
+    <div class="main">
+      <nav>Nav</nav>
+      <article>Article</article>
+      <aside>Aside</aside>
+    </div>
+
+    <footer>Footer</footer>
+  </div>
+
+</body>
+</html>
