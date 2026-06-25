@@ -1,0 +1,33 @@
+.app {
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.dog-image {
+  width: 400px;
+  max-width: 90%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+}
