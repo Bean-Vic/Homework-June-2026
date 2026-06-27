@@ -2,9 +2,11 @@ const fs = require("fs/promises");
 
 const requiredFields = ["name", "email", "role"];
 
-function checkUser(user, index) {
+function validateUser(user, index = null) {
+  const label = index === null ? "User" : `User at index ${index}`;
+
   if (typeof user !== "object" || user === null || Array.isArray(user)) {
-    throw new Error(`User ${index} must be an object.`);
+    throw new Error(`${label} must be an object.`);
   }
 
   const missingFields = [];
@@ -17,17 +19,40 @@ function checkUser(user, index) {
 
   if (missingFields.length > 0) {
     throw new Error(
-      `User ${index} is missing required field(s): ${missingFields.join(", ")}`
+      `${label} is missing required field(s): ${missingFields.join(", ")}`
     );
   }
 }
 
+function printHelp() {
+  console.log("JSON Request Validator");
+  console.log("");
+  console.log("Usage:");
+  console.log("  node validate-json.js <file.json>");
+  console.log("");
+  console.log("Options:");
+  console.log("  --pretty   Print formatted JSON after validation");
+  console.log("  --help     Show help message");
+  console.log("");
+  console.log("Examples:");
+  console.log("  node validate-json.js valid-user.json");
+  console.log("  node validate-json.js valid-user.json --pretty");
+}
+
 async function main() {
-  const filePath = process.argv[2];
-  const pretty = process.argv.includes("--pretty");
+  const args = process.argv.slice(2);
+
+  if (args.includes("--help")) {
+    printHelp();
+    return;
+  }
+
+  const pretty = args.includes("--pretty");
+  const filePath = args.find((arg) => !arg.startsWith("--"));
 
   if (!filePath) {
-    console.error("Please provide a JSON file path.");
+    console.error("Missing file path.");
+    console.error("Usage: node validate-json.js <file.json>");
     console.error("Example: node validate-json.js valid-user.json");
     process.exit(1);
   }
@@ -41,9 +66,9 @@ async function main() {
     }
 
     if (Array.isArray(data)) {
-      data.forEach((user, index) => checkUser(user, index));
+      data.forEach((user, index) => validateUser(user, index));
     } else {
-      checkUser(data, 0);
+      validateUser(data);
     }
 
     console.log("valid JSON");
