@@ -1,7 +1,0 @@
-Today I practiced Node.js file system methods.
-
-I learned that fs/promises lets me work with files asynchronously. This is better than using synchronous file APIs because it does not block the program while the file is being read.
-
-I also practiced using path.basename, path.extname, and path.resolve. These methods help me get useful information from a file path.
-
-This assignment helped me understand how backend tools can work from the command line.
