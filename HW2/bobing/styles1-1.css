@@ -1,0 +1,39 @@
+body {
+  color: #999;
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+}
+
+header {
+  background-color: #ac0;
+  height: 80px;
+}
+
+nav,
+aside {
+  background-color: antiquewhite;
+  width: 100px;
+  height: 300px;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: #ff0;
+  height: 50px;
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+  padding: 10px 0 0 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
