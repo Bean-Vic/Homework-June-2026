@@ -1,0 +1,39 @@
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "nav article aside"
+    "footer footer footer";
+}
+
+.container * {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    color: gray;
+    font-weight: 600;
+}
+
+header {
+    grid-area: header;
+    background-color: YellowGreen;
+}
+
+nav {
+    grid-area: nav;
+    background-color: LightGoldenrodYellow;
+}
+
+article {
+    grid-area: article;
+}
+aside {
+    grid-area: aside;
+    background-color: LightGoldenrodYellow;
+}
+footer {
+    grid-area: footer;
+    background-color: Yellow;
+}

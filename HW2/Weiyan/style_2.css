@@ -1,0 +1,46 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.flex-container * {
+    font-size: 1.5rem;
+    color: gray;
+    font-weight: 600;
+}
+
+.main-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 3;
+}
+
+.main-row * {
+    padding: 1.5rem;
+}
+
+header {
+    flex: 1;
+    background-color: YellowGreen;
+    padding: 1.5rem;
+}
+
+nav {
+    flex: 1;
+    background-color: LightGoldenrodYellow;
+}
+
+article {
+    flex: 3;
+}
+aside {
+    flex: 1;
+    background-color: LightGoldenrodYellow;
+}
+footer {
+    flex: 1;
+    background-color: Yellow;
+    padding: 1.5rem;
+}
