@@ -1,0 +1,12 @@
+{
+  "name": "async-error-handling",
+  "version": "1.0.0",
+  "description": "HW11 Task 6 - Express async error handling refactor (asyncHandler)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
