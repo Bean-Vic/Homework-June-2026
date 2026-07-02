@@ -1,0 +1,9 @@
+{
+  "name": "native-http-server",
+  "version": "1.0.0",
+  "description": "HW11 Task 3 - REST-like server using only Node's http module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

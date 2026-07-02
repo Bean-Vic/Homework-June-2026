@@ -1,0 +1,3 @@
+Hello from the async error handling lab.
+This file is read asynchronously by the /read-file route.
+Each thrown async error is forwarded to the global error middleware.

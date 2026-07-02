@@ -1,0 +1,12 @@
+{
+  "name": "express-middleware-lab",
+  "version": "1.0.0",
+  "description": "HW11 Task 5 - Express middleware lab (logger, auth, roles, error handling)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

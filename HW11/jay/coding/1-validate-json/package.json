@@ -1,0 +1,9 @@
+{
+  "name": "validate-json",
+  "version": "1.0.0",
+  "description": "HW11 Task 1 - CLI JSON request validator (Node built-ins only)",
+  "main": "validate-json.js",
+  "scripts": {
+    "start": "node validate-json.js"
+  }
+}

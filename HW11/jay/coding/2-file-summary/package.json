@@ -1,0 +1,9 @@
+{
+  "name": "file-summary",
+  "version": "1.0.0",
+  "description": "HW11 Task 2 - CLI file summary tool (Node built-ins only)",
+  "main": "file-summary.js",
+  "scripts": {
+    "start": "node file-summary.js"
+  }
+}
