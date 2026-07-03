@@ -1,0 +1,110 @@
+.shopping-cart {
+  width: 520px;
+  max-width: 90vw;
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #111827;
+}
+
+.shopping-cart h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.cart-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cart-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.cart-controls select,
+.cart-controls input {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.cart-controls input {
+  width: 72px;
+}
+
+.cart-controls button {
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cart-controls button:hover {
+  background: #1d4ed8;
+}
+
+.cart-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.cart-table-wrapper th,
+.cart-table-wrapper td {
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.cart-table-wrapper th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #9ca3af;
+}
+
+.cart-table-wrapper .empty-cart {
+  text-align: center;
+  color: #9ca3af;
+  padding: 24px 8px;
+}
+
+.cart-table-wrapper tfoot td {
+  font-weight: 700;
+  border-top: 2px solid #e5e7eb;
+  border-bottom: none;
+}
+
+.remove-button {
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ef4444;
+  background: transparent;
+  border: 1px solid #ef4444;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  color: #ffffff;
+  background: #ef4444;
+}
