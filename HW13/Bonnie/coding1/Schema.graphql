@@ -1,0 +1,32 @@
+type Customer{
+    id: ID!
+    name: String!
+    email: string!
+    
+}
+
+type Product{
+    id: ID!
+    name: string!
+    sku: string!
+    category: string!
+    description: string
+}
+
+type LineItems[{
+    id: ID!
+    quantity: Int!
+    unitPrice: Float!
+    product: Product!
+
+}]
+
+type Order{
+    id: ID!
+    status: string!
+    createdAt: string!
+    customer: customer!
+    lineItems: [lineItems!]!
+    total: float!
+
+}
