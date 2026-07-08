@@ -6,7 +6,7 @@
 
 **Architecture:** One FastAPI process serves a JSON API and a static frontend. Uploads are saved to disk; metadata lives in SQLite. Classification goes through a small `Classifier` interface with an OpenAI GPT-4o implementation, so the model is swappable and can be mocked in tests. Structured output is parsed by an isolated `parse_model_output` function that tolerates messy model responses.
 
-**Tech Stack:** Python 3.14, FastAPI, Uvicorn, Pydantic v2, OpenAI Python SDK, SQLite (stdlib `sqlite3`), pytest, `httpx`/FastAPI `TestClient`.
+**Tech Stack:** Python 3.12 (3.14 lacks prebuilt wheels for the pinned deps), FastAPI, Uvicorn, Pydantic v2, OpenAI Python SDK, SQLite (stdlib `sqlite3`), pytest, `httpx`/FastAPI `TestClient`.
 
 ## Global Constraints
 
