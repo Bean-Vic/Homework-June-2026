@@ -5,6 +5,9 @@ Usage: python scripts/check_openai_json.py scripts/sample.jpg
 """
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from dotenv import load_dotenv
 from app.classifier import get_classifier
 
