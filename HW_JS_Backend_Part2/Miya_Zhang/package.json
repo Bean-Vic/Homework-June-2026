@@ -1,0 +1,21 @@
+{
+  "name": "hw12-mongodb-mongoose",
+  "version": "1.0.0",
+  "description": "HW12 JavaScript Backend Fundamentals Part 2 - MongoDB and Mongoose",
+  "main": "server.js",
+  "scripts": {
+    "crud": "node nativeCrud.js",
+    "model": "node userModelDemo.js",
+    "start": "node server.js",
+    "import:tasks": "node import.js --file data/tasks.json --type tasks",
+    "import:users": "node import.js --file data/users.json --type users",
+    "import:dry": "node import.js --file data/tasks.json --type tasks --dry-run",
+    "index": "node indexLab.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.0"
+  }
+}
