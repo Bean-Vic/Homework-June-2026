@@ -1,0 +1,49 @@
+# HW13 Coding Problem 1a - GraphQL schema based on the order JSON
+
+type Query {
+  order(id: ID!): Order
+}
+
+type Order {
+  id: ID!
+  status: OrderStatus!
+  createdAt: String!
+  customer: Customer!
+  lineItems: [LineItem!]!
+  total: Float!
+}
+
+type Customer {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type LineItem {
+  id: ID!
+  quantity: Int!
+  unitPrice: Float!
+  product: Product!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  sku: String!
+  category: ProductCategory!
+  # description is nullable: P-782 has "description": null in the sample JSON
+  description: String
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum ProductCategory {
+  ELECTRONICS
+  SPORTS
+}
