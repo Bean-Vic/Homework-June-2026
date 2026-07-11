@@ -125,6 +125,15 @@ def index():
     return FileResponse(STATIC_DIR / "index.html")
 
 
+@app.get("/image/{filename}")
+def serve_image(filename: str):
+    safe = Path(filename).name  # prevent path traversal
+    path = IMAGES_DIR / safe
+    if not path.exists():
+        raise HTTPException(status_code=404, detail="not found")
+    return FileResponse(path)
+
+
 def _one(conn, image_id: int) -> dict:
     rows = db.list_images(conn)
     for r in rows:
