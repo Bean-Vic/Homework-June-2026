@@ -50,18 +50,30 @@ class AnnotationIn(BaseModel):
     text: str
 
 
+def _opt_int(value: str | None, field: str) -> int | None:
+    # Browser forms post untouched inputs as "" — treat that as "not provided".
+    if value is None or value.strip() == "":
+        return None
+    try:
+        return int(value)
+    except ValueError:
+        raise HTTPException(status_code=422, detail=f"{field} must be a whole number")
+
+
 @app.post("/images")
 async def upload_image(
     file: UploadFile = File(...),
     continent: str | None = Form(None),
     country: str | None = Form(None),
     city: str | None = Form(None),
-    year: int | None = Form(None),
-    month: int | None = Form(None),
+    year: str | None = Form(None),
+    month: str | None = Form(None),
     season: str | None = Form(None),
     designer: str | None = Form(None),
     conn=Depends(get_db),
 ):
+    year_i = _opt_int(year, "year")
+    month_i = _opt_int(month, "month")
     content = await file.read()
     try:
         result = _classifier().classify(content, mime_type=file.content_type or "image/jpeg")
@@ -73,8 +85,9 @@ async def upload_image(
     ext = Path(file.filename or "upload.jpg").suffix or ".jpg"
     stored_name = f"{uuid.uuid4().hex}{ext}"
     (IMAGES_DIR / stored_name).write_bytes(content)
-    context = UploadContext(continent=continent, country=country, city=city,
-                            year=year, month=month, season=season, designer=designer)
+    context = UploadContext(continent=continent or None, country=country or None,
+                            city=city or None, year=year_i, month=month_i,
+                            season=season or None, designer=designer or None)
     image_id = db.insert_image(conn, filename=stored_name, description=result.description,
                                attributes=result.attributes, context=context)
     return _one(conn, image_id)

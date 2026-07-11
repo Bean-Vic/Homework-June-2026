@@ -5,6 +5,9 @@
    without check_same_thread=False every real upload crashed.
 2. GPT-4o can refuse featureless images (content=None) — that must surface
    as a clear 4xx with a message, not a 500.
+3. Browsers submit EVERY form field, so untouched optional number inputs
+   arrive as empty strings ("") — those must be treated as "not provided",
+   not rejected with a 422 int-parsing error.
 """
 import pytest
 from fastapi.testclient import TestClient
@@ -49,3 +52,21 @@ def test_refusal_returns_422_with_detail(tmp_path, monkeypatch):
         r = client.post("/images", files={"file": ("tiny.jpg", f, "image/jpeg")})
     assert r.status_code == 422
     assert "refused" in r.json()["detail"]
+
+
+def test_browser_style_form_with_empty_fields(tmp_path, monkeypatch):
+    # A real browser form posts every input, empty ones included.
+    monkeypatch.setattr(main, "DB_PATH", str(tmp_path / "app.db"))
+    monkeypatch.setattr(main, "IMAGES_DIR", tmp_path)
+    monkeypatch.setattr(main, "classifier", FakeClassifier())
+    client = TestClient(app)
+    with open("tests/fixtures/tiny.jpg", "rb") as f:
+        r = client.post("/images", files={"file": ("tiny.jpg", f, "image/jpeg")},
+                        data={"country": "Italy", "city": "Milan", "continent": "",
+                              "year": "2026", "month": "", "season": "summer",
+                              "designer": ""})
+    assert r.status_code == 200
+    body = r.json()
+    assert body["country"] == "Italy"
+    assert body["year"] == 2026
+    assert body["month"] is None

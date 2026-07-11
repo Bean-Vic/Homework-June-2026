@@ -27,7 +27,13 @@ form.onsubmit = async (e) => {
   setStatus("Uploading & classifying… (this calls the AI model, ~5–15s)");
 
   try {
-    const res = await fetch("/images", { method: "POST", body: new FormData(form) });
+    // Don't send untouched fields — browsers include every input as "",
+    // which the server would otherwise have to special-case.
+    const data = new FormData(form);
+    for (const [key, value] of [...data.entries()]) {
+      if (typeof value === "string" && value.trim() === "") data.delete(key);
+    }
+    const res = await fetch("/images", { method: "POST", body: data });
     if (!res.ok) {
       // Surface the server's actual reason instead of a generic failure.
       let reason = `server returned ${res.status}`;
