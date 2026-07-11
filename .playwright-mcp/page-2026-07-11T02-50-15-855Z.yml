@@ -1,0 +1,42 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - heading "Upload a garment" [level=1] [ref=f1e3]
+    - link "← Back to library" [ref=f1e4] [cursor=pointer]:
+      - /url: /
+  - main [ref=f1e5]:
+    - generic [ref=f1e6]:
+      - generic [ref=f1e7]:
+        - text: Photo *
+        - button "Photo *" [ref=f1e8]
+      - generic [ref=f1e9]:
+        - text: Country
+        - textbox "Country" [ref=f1e10]:
+          - /placeholder: e.g. Italy
+          - text: Italy
+      - generic [ref=f1e11]:
+        - text: City
+        - textbox "City" [ref=f1e12]:
+          - /placeholder: e.g. Milan
+          - text: Milan
+      - generic [ref=f1e13]:
+        - text: Continent
+        - textbox "Continent" [ref=f1e14]:
+          - /placeholder: e.g. Europe
+      - generic [ref=f1e15]:
+        - generic [ref=f1e16]:
+          - text: Year
+          - spinbutton "Year" [ref=f1e17]: "2026"
+        - generic [ref=f1e18]:
+          - text: Month
+          - spinbutton "Month" [ref=f1e19]
+      - generic [ref=f1e20]:
+        - text: Season
+        - textbox "Season" [ref=f1e21]:
+          - /placeholder: e.g. winter
+          - text: summer
+      - generic [ref=f1e22]:
+        - text: Designer
+        - textbox "Designer" [ref=f1e23]:
+          - /placeholder: e.g. local artisan
+      - button "Upload & classify" [ref=f1e24] [cursor=pointer]
+    - paragraph [ref=f1e25]: "Upload failed: [{\"type\":\"int_parsing\",\"loc\":[\"body\",\"month\"],\"msg\":\"Input should be a valid integer, unable to parse string as an integer\",\"input\":\"\"}]"

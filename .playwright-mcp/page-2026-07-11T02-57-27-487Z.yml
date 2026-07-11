@@ -1,0 +1,43 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - heading "Fashion Inspiration Library" [level=1] [ref=f3e3]
+    - link "+ Upload" [ref=f3e4] [cursor=pointer]:
+      - /url: /upload
+  - navigation "search and filters" [ref=f3e5]:
+    - searchbox "Search descriptions & notes…" [ref=f3e6]
+    - generic [ref=f3e7]:
+      - combobox "garment_type" [ref=f3e8]:
+        - 'option "garment type: any" [selected]'
+        - option "gown"
+      - combobox "style" [ref=f3e9]:
+        - 'option "style: any" [selected]'
+        - option "formal"
+      - combobox "material" [ref=f3e10]:
+        - 'option "material: any" [selected]'
+        - option "satin"
+      - combobox "pattern" [ref=f3e11]:
+        - 'option "pattern: any" [selected]'
+        - option "solid with embellishments"
+      - combobox "occasion" [ref=f3e12]:
+        - 'option "occasion: any" [selected]'
+        - option "formal event"
+      - combobox "consumer_profile" [ref=f3e13]:
+        - 'option "consumer profile: any" [selected]'
+        - option "female"
+      - combobox "country" [ref=f3e14]:
+        - 'option "country: any" [selected]'
+        - option "Italy"
+      - combobox "year" [ref=f3e15]:
+        - 'option "year: any" [selected]'
+        - option "2026"
+    - button "Clear" [ref=f3e16] [cursor=pointer]
+  - main [ref=f3e17]:
+    - generic [ref=f3e19]:
+      - img "gown" [ref=f3e20]
+      - paragraph [ref=f3e21]: An elegant, floor-length strapless gown with a flattering silhouette, featuring a rich, deep red color and subtle embellishments. The dress exudes a sense of sophistication and glamour, suitable for formal occasions.
+      - paragraph [ref=f3e22]: gown · satin · red
+      - paragraph [ref=f3e23]: Italy, 2026
+      - list
+      - generic [ref=f3e24]:
+        - textbox "add note…" [ref=f3e25]
+        - button "Add" [ref=f3e26] [cursor=pointer]

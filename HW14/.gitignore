@@ -7,3 +7,4 @@ app/data/images/*
 !app/data/images/.gitkeep
 app/data/app.db
 .pytest_cache/
+CLAUDE.local.md
