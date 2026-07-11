@@ -63,11 +63,16 @@ async def upload_image(
     conn=Depends(get_db),
 ):
     content = await file.read()
+    try:
+        result = _classifier().classify(content, mime_type=file.content_type or "image/jpeg")
+    except ValueError as exc:
+        # Model refused or returned unparseable output — a clear client-visible
+        # error, not a 500 (and don't keep the file for a failed upload).
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
     ext = Path(file.filename or "upload.jpg").suffix or ".jpg"
     stored_name = f"{uuid.uuid4().hex}{ext}"
     (IMAGES_DIR / stored_name).write_bytes(content)
-
-    result = _classifier().classify(content, mime_type=file.content_type or "image/jpeg")
     context = UploadContext(continent=continent, country=country, city=city,
                             year=year, month=month, season=season, designer=designer)
     image_id = db.insert_image(conn, filename=stored_name, description=result.description,
@@ -123,6 +128,11 @@ def annotate(image_id: int, body: AnnotationIn, conn=Depends(get_db)):
 @app.get("/")
 def index():
     return FileResponse(STATIC_DIR / "index.html")
+
+
+@app.get("/upload")
+def upload_page():
+    return FileResponse(STATIC_DIR / "upload.html")
 
 
 @app.get("/image/{filename}")

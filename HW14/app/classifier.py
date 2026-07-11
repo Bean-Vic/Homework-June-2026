@@ -68,7 +68,14 @@ class OpenAIClassifier:
                 ],
             }],
         )
-        return parse_model_output(resp.choices[0].message.content or "")
+        message = resp.choices[0].message
+        # Featureless/unreadable images make the model refuse: content is None
+        # and .refusal carries the reason. Surface that clearly instead of
+        # failing to parse an empty string.
+        if not message.content:
+            reason = getattr(message, "refusal", None) or "model returned no content"
+            raise ValueError(f"The model refused to classify this image: {reason}")
+        return parse_model_output(message.content)
 
 
 def get_classifier() -> Classifier:

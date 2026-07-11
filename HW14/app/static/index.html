@@ -7,30 +7,22 @@
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
-  <header><h1>Fashion Inspiration Library</h1></header>
+  <header class="topbar">
+    <h1>Fashion Inspiration Library</h1>
+    <a class="btn btn-primary" href="/upload">+ Upload</a>
+  </header>
+
+  <nav id="filterbar" class="filterbar" aria-label="search and filters">
+    <input id="search" type="search" placeholder="Search descriptions &amp; notes…" />
+    <div id="filters" class="filters"></div>
+    <button id="clear" class="btn">Clear</button>
+  </nav>
+
   <main>
-    <section id="upload">
-      <h2>Upload</h2>
-      <form id="upload-form">
-        <input type="file" name="file" accept="image/*" required />
-        <input type="text" name="country" placeholder="country" />
-        <input type="text" name="city" placeholder="city" />
-        <input type="text" name="continent" placeholder="continent" />
-        <input type="number" name="year" placeholder="year" />
-        <input type="number" name="month" placeholder="month" />
-        <input type="text" name="season" placeholder="season" />
-        <input type="text" name="designer" placeholder="designer" />
-        <button type="submit">Upload &amp; classify</button>
-      </form>
-      <p id="upload-status"></p>
-    </section>
-    <section id="controls">
-      <input id="search" type="search" placeholder="Search descriptions &amp; notes…" />
-      <div id="filters"></div>
-      <button id="clear">Clear filters</button>
-    </section>
-    <section id="grid"></section>
+    <p id="empty-hint" class="hint" hidden>No images yet — click “+ Upload” to add your first garment.</p>
+    <section id="grid" class="grid"></section>
   </main>
+
   <script src="/static/app.js"></script>
 </body>
 </html>

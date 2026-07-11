@@ -9,7 +9,11 @@ _TEXT_ATTR = {"garment_type", "style", "material", "pattern", "occasion", "consu
 
 
 def get_connection(path: str) -> sqlite3.Connection:
-    conn = sqlite3.connect(path)
+    # check_same_thread=False: FastAPI runs sync dependencies (get_db) in a
+    # threadpool thread while async endpoints run on the event loop thread, so
+    # the same per-request connection is touched from two threads (sequentially,
+    # never concurrently — safe).
+    conn = sqlite3.connect(path, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
 

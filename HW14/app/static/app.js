@@ -1,12 +1,11 @@
+// Gallery page: sticky filter bar + card grid. All DOM built with
+// createElement/textContent (never innerHTML interpolation) so model output
+// and user notes can't be interpreted as HTML.
 const grid = document.getElementById("grid");
 const filtersEl = document.getElementById("filters");
 const searchEl = document.getElementById("search");
+const emptyHint = document.getElementById("empty-hint");
 let activeFilters = {};
-
-// All rendering builds the DOM with createElement + textContent rather than
-// innerHTML string interpolation, so descriptions, annotations, filenames and
-// filter values (which originate from the model output and user notes) can
-// never be interpreted as HTML. This closes the obvious XSS hole.
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -21,8 +20,10 @@ async function loadFilters() {
   for (const [key, options] of Object.entries(vals)) {
     if (!options.length) continue;
     const sel = document.createElement("select");
-    sel.appendChild(new Option(`${key}: any`, ""));
+    sel.title = key;
+    sel.appendChild(new Option(`${key.replaceAll("_", " ")}: any`, ""));
     for (const o of options) sel.appendChild(new Option(o, o));
+    if (activeFilters[key]) sel.value = activeFilters[key];
     sel.onchange = () => {
       if (sel.value) activeFilters[key] = sel.value;
       else delete activeFilters[key];
@@ -47,6 +48,7 @@ async function runSearch() {
 
 function render(images) {
   grid.innerHTML = "";
+  emptyHint.hidden = images.length > 0;
   for (const img of images) {
     const a = img.attributes || {};
     const card = el("div", "card");
@@ -54,6 +56,7 @@ function render(images) {
     const im = el("img");
     im.src = "/image/" + encodeURIComponent(img.filename || "");
     im.alt = a.garment_type || "garment";
+    im.loading = "lazy";
     card.appendChild(im);
 
     card.appendChild(el("p", "desc", img.description || ""));
@@ -69,10 +72,11 @@ function render(images) {
     const form = el("form", "ann");
     const input = el("input");
     input.placeholder = "add note…";
-    const addBtn = el("button", null, "Add");
+    const addBtn = el("button", "btn", "Add");
     form.append(input, addBtn);
     form.onsubmit = async (e) => {
       e.preventDefault();
+      if (!input.value.trim()) return;
       await fetch(`/images/${img.id}/annotations`, {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: input.value }),
@@ -84,17 +88,6 @@ function render(images) {
     grid.appendChild(card);
   }
 }
-
-document.getElementById("upload-form").onsubmit = async (e) => {
-  e.preventDefault();
-  const status = document.getElementById("upload-status");
-  status.textContent = "Uploading & classifying…";
-  const res = await fetch("/images", { method: "POST", body: new FormData(e.target) });
-  status.textContent = res.ok ? "Done." : "Upload failed.";
-  e.target.reset();
-  await loadFilters();
-  await loadImages();
-};
 
 document.getElementById("clear").onclick = () => {
   activeFilters = {}; searchEl.value = "";
