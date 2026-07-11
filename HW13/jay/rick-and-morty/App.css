@@ -1,0 +1,111 @@
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.app h1 {
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-form input {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+}
+
+.search-form button,
+.pagination button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.status-msg {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.status-msg.error {
+  color: #d33;
+}
+
+.character-grid {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.character-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.character-card img {
+  width: 100%;
+  display: block;
+}
+
+.character-details {
+  padding: 0.75rem;
+}
+
+.character-details h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.character-details p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.origin {
+  color: #666;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: #999;
+}
+
+.dot.alive {
+  background: #3c3;
+}
+
+.dot.dead {
+  background: #d33;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}

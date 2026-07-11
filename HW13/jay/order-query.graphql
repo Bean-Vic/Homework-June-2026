@@ -1,0 +1,33 @@
+# HW13 Coding Problem 1b - one configurable query that fetches an order by orderId
+# and returns all nested data (customer, lineItems, and each line item's product).
+#
+# Example variables:
+# {
+#   "orderId": "ORD-001"
+# }
+
+query GetOrder($orderId: ID!) {
+  order(id: $orderId) {
+    id
+    status
+    createdAt
+    total
+    customer {
+      id
+      name
+      email
+    }
+    lineItems {
+      id
+      quantity
+      unitPrice
+      product {
+        id
+        name
+        sku
+        category
+        description
+      }
+    }
+  }
+}
