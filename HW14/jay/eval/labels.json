@@ -1,0 +1,62 @@
+[
+  {
+    "file": "images/001.jpg",
+    "expected": { "garment_type": "dress", "occasion": "formal", "style": "vintage" }
+  },
+  {
+    "file": "images/002.jpg",
+    "expected": { "garment_type": "dress", "material": "linen", "style": "casual", "occasion": "casual", "season": "summer", "location_context": "urban street" }
+  },
+  {
+    "file": "images/003.jpg",
+    "expected": { "garment_type": "dress", "material": "satin", "style": "formal", "occasion": "evening" }
+  },
+  {
+    "file": "images/004.jpg",
+    "expected": { "garment_type": "coat", "material": "wool", "pattern": "herringbone", "style": "minimalist", "occasion": "casual", "season": "winter" }
+  },
+  {
+    "file": "images/005.jpg",
+    "expected": { "garment_type": "coat", "material": "wool", "occasion": "casual", "season": "winter" }
+  },
+  {
+    "file": "images/006.jpg",
+    "expected": { "garment_type": "coat", "material": "wool", "pattern": "herringbone", "occasion": "casual", "season": "winter", "location_context": "urban street" }
+  },
+  {
+    "file": "images/007.jpg",
+    "expected": { "garment_type": "jacket", "material": "denim", "style": "streetwear", "occasion": "casual", "season": "spring" }
+  },
+  {
+    "file": "images/008.jpg",
+    "expected": { "garment_type": "jacket", "material": "denim", "style": "streetwear", "occasion": "casual" }
+  },
+  {
+    "file": "images/009.jpg",
+    "expected": { "garment_type": "jacket", "material": "denim", "style": "casual", "occasion": "casual" }
+  },
+  {
+    "file": "images/010.jpg",
+    "expected": { "garment_type": "suit", "material": "wool", "style": "formal", "occasion": "formal", "location_context": "boutique" }
+  },
+  {
+    "file": "images/011.jpg",
+    "expected": { "garment_type": "suit", "material": "wool", "pattern": "pinstripe", "style": "formal", "occasion": "formal", "location_context": "boutique" }
+  },
+  {
+    "file": "images/012.jpg",
+    "expected": { "garment_type": "suit", "material": "wool", "style": "formal", "occasion": "formal" }
+  },
+  {
+    "file": "images/013.jpg",
+    "expected": { "garment_type": "sweater", "material": "wool", "pattern": "cable knit", "style": "casual", "occasion": "casual", "season": "winter" }
+  },
+  {
+    "file": "images/014.jpg",
+    "expected": { "garment_type": "sweater", "material": "wool", "pattern": "knit" }
+  },
+  {
+    "file": "images/015.jpg",
+    "expected": { "garment_type": "sweater", "material": "wool", "pattern": "ribbed knit", "style": "casual", "occasion": "casual", "season": "fall" }
+  }
+]

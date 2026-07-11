@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload — Fashion Inspiration Library</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Upload a garment</h1>
+    <a class="btn" href="/">&larr; Back to library</a>
+  </header>
+
+  <main class="narrow">
+    <form id="upload-form" class="upload-form">
+      <label>Photo *
+        <input type="file" name="file" accept="image/*" required />
+      </label>
+      <label>Country
+        <input type="text" name="country" placeholder="e.g. Italy" />
+      </label>
+      <label>City
+        <input type="text" name="city" placeholder="e.g. Milan" />
+      </label>
+      <label>Continent
+        <input type="text" name="continent" placeholder="e.g. Europe" />
+      </label>
+      <div class="row2">
+        <label>Year
+          <input type="number" name="year" placeholder="e.g. 2026" min="1900" max="2100" />
+        </label>
+        <label>Month
+          <input type="number" name="month" placeholder="1–12" min="1" max="12" />
+        </label>
+      </div>
+      <label>Season
+        <input type="text" name="season" placeholder="e.g. winter" />
+      </label>
+      <label>Designer
+        <input type="text" name="designer" placeholder="e.g. local artisan" />
+      </label>
+      <button type="submit" class="btn btn-primary" id="submit-btn">Upload &amp; classify</button>
+    </form>
+
+    <p id="upload-status" class="status" hidden></p>
+    <section id="result" class="grid" hidden></section>
+  </main>
+
+  <script src="/static/upload.js"></script>
+</body>
+</html>

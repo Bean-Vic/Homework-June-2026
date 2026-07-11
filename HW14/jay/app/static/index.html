@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fashion Inspiration Library</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Fashion Inspiration Library</h1>
+    <a class="btn btn-primary" href="/upload">+ Upload</a>
+  </header>
+
+  <nav id="filterbar" class="filterbar" aria-label="search and filters">
+    <input id="search" type="search" placeholder="Search descriptions &amp; notes…" />
+    <div id="filters" class="filters"></div>
+    <button id="clear" class="btn">Clear</button>
+  </nav>
+
+  <main>
+    <p id="empty-hint" class="hint" hidden>No images yet — click “+ Upload” to add your first garment.</p>
+    <section id="grid" class="grid"></section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
