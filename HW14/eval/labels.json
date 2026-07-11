@@ -1,0 +1,20 @@
+[
+  {
+    "file": "images/001.jpg",
+    "expected": {
+      "garment_type": "dress",
+      "style": "bohemian",
+      "material": "cotton",
+      "occasion": "casual",
+      "location_context": "market"
+    }
+  },
+  {
+    "file": "images/002.jpg",
+    "expected": {
+      "garment_type": "coat",
+      "material": "wool",
+      "season": "winter"
+    }
+  }
+]
