@@ -84,18 +84,37 @@ skipped in scoring. Scored attributes: `garment_type, style, material, pattern,
 occasion, consumer_profile, season, location_context`. Matching is
 substring-tolerant in either direction.
 
-Results (run against N hand-labeled images — _fill in after running_):
+Results (gpt-4o over 15 hand-labeled Pexels photos: dresses, coats, denim
+jackets, suits, knit sweaters). `n` is the number of images that labeled a given
+attribute:
 
 | attribute | accuracy | n |
 |-----------|----------|---|
-| garment_type | XX% | N |
-| material | XX% | N |
-| style | XX% | N |
-| occasion | XX% | N |
-| ... | ... | ... |
-| **OVERALL** | **XX%** | N |
+| garment_type | 87% | 15 |
+| season | 86% | 7 |
+| material | 79% | 14 |
+| style | 75% | 12 |
+| occasion | 71% | 14 |
+| pattern | 67% | 6 |
+| location_context | 50% | 4 |
+| **OVERALL** | **76%** | 72 |
 
-**Where it does well:** _fill in — typically coarse categories like garment_type._
-**Where it struggles:** _fill in — e.g. material vs. print confusion, season inference._
-**With more time:** expand the labeled set to 50–100, add embeddings-based
-search, and constrain attributes with enums for stricter scoring.
+**Where it does well:** coarse, visually obvious attributes — `garment_type`
+(87%) and `season` (86%). Coats, denim jackets and knit sweaters are recognized
+reliably, and material follows when the weave is distinctive (denim, wool knit).
+
+**Where it struggles:** subjective or fine-grained attributes. `location_context`
+(50%, small n) is inherently loose — the model guesses a plausible setting that
+rarely matches a specific label. `pattern` (67%) confuses related weaves
+(herringbone vs. plain, ribbed vs. cable knit). `occasion` (71%) is judgment-heavy
+(smart-casual vs. casual). Ambiguous inputs hurt too: a couple in mixed outfits
+and suits on shop mannequins have no single "correct" garment.
+
+**Caveat on ground truth:** these labels were drafted by visual inspection (by an
+AI assistant), not an independent domain expert, so the numbers gauge agreement
+more than absolute correctness — treat them as indicative. Spot-check or replace
+`eval/labels.json` for a rigorous measure.
+
+**With more time:** expand the labeled set to 50–100 with independent human
+labels, add embeddings-based search, and constrain attributes with enums for
+stricter, less substring-dependent scoring.
