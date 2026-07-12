@@ -1,0 +1,10 @@
+[
+  { "externalId": "T-001", "title": "Set up repo", "status": "done", "priority": "high", "dueDate": "2026-07-01" },
+  { "externalId": "T-002", "title": "Write schema", "status": "in_progress", "priority": "medium", "dueDate": "2026-07-20" },
+  { "externalId": "T-003", "title": "  Build API  ", "status": "todo", "priority": "high" },
+  { "externalId": "T-003", "title": "Build API (duplicate)", "status": "todo", "priority": "low" },
+  { "externalId": "T-004", "status": "todo", "priority": "low" },
+  { "externalId": "T-005", "title": "Bad status task", "status": "blocked" },
+  { "externalId": "T-006", "title": "Bad date task", "dueDate": "not-a-date" },
+  { "externalId": "T-007", "title": "Deploy to staging", "status": "todo", "priority": "medium", "dueDate": "2026-08-01" }
+]

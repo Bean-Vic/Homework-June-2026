@@ -1,0 +1,7 @@
+{"externalId":"E-001","eventType":"login","user":"alice@example.com","at":"2026-07-01T10:00:00Z"}
+{"externalId":"E-002","eventType":"click","user":"bob@example.com","at":"2026-07-01T10:05:00Z"}
+{"externalId":"E-002","eventType":"click","user":"bob@example.com","at":"2026-07-01T10:05:00Z"}
+this line is not valid JSON {{{
+{"externalId":"E-003","eventType":"logout","user":"alice@example.com","at":"2026-07-01T11:00:00Z"}
+{"eventType":"purchase","user":"carol@example.com","at":"2026-07-01T12:00:00Z"}
+{"externalId":"E-004","eventType":"login","user":"carol@example.com","at":"2026-07-02T09:00:00Z"}

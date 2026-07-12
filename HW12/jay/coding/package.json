@@ -1,0 +1,24 @@
+{
+  "name": "hw12-backend-part2",
+  "version": "1.0.0",
+  "description": "HW12: MongoDB and Mongoose - coding tasks 1-7",
+  "scripts": {
+    "task1": "node task1-native-crud.js",
+    "task2": "node task2-mongoose-model.js",
+    "seed": "node api/seed.js",
+    "start": "node api/server.js",
+    "task6:users": "node task6-import/import.js --file data/users.json --type users",
+    "task6:tasks": "node task6-import/import.js --file data/tasks.json --type tasks",
+    "task6:events": "node task6-import/import.js --file data/events.ndjson --type events",
+    "task7": "node task7-index-lab.js"
+  },
+  "author": "Jay",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.5.0",
+    "mongoose": "^9.7.4"
+  }
+}

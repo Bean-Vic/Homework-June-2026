@@ -1,0 +1,10 @@
+[
+  { "name": "Alice Zhang", "email": "alice.zhang@example.com", "age": 25, "role": "student" },
+  { "name": "Bob Li", "email": "  BOB.LI@Example.COM  ", "age": 30, "role": "mentor" },
+  { "name": "Carol Wang", "email": "carol.wang@example.com", "age": 28 },
+  { "name": "Duplicate Bob", "email": "bob.li@example.com", "age": 31 },
+  { "name": "No Email Nick", "age": 22 },
+  { "name": "Bad Email Betty", "email": "not-an-email", "age": 27 },
+  { "name": "Ancient Al", "email": "al@example.com", "age": 999 },
+  { "name": "Eve Chen", "email": "eve.chen@example.com", "age": 24, "role": "student" }
+]
