@@ -1,0 +1,28 @@
+[
+  {
+    "line": 5,
+    "raw": {
+      "name": "No Email Nick",
+      "age": 22
+    },
+    "reason": "missing required field: email"
+  },
+  {
+    "line": 6,
+    "raw": {
+      "name": "Bad Email Betty",
+      "email": "not-an-email",
+      "age": 27
+    },
+    "reason": "invalid email: not-an-email"
+  },
+  {
+    "line": 7,
+    "raw": {
+      "name": "Ancient Al",
+      "email": "al@example.com",
+      "age": 999
+    },
+    "reason": "invalid age: 999"
+  }
+]
