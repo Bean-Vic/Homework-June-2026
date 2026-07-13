@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fashion Garment Inspiration App</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Fashion Garment Classification & Inspiration App</h1>
+    <p>
+      Upload inspiration photos, generate AI-style garment metadata, search the library,
+      and add designer notes.
+    </p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Upload Image</h2>
+      <form id="uploadForm">
+        <input id="imageInput" type="file" name="image" accept="image/*" required />
+        <button type="submit">Upload + Classify</button>
+      </form>
+      <p class="hint">
+        Prototype note: this app uses a local mock classifier so it can run without API keys.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Search + Filters</h2>
+      <div class="controls">
+        <input id="searchInput" type="text" placeholder="Search descriptions, notes, tags..." />
+        <select id="garmentTypeFilter"><option value="">All garment types</option></select>
+        <select id="styleFilter"><option value="">All styles</option></select>
+        <select id="materialFilter"><option value="">All materials</option></select>
+        <select id="seasonFilter"><option value="">All seasons</option></select>
+        <select id="occasionFilter"><option value="">All occasions</option></select>
+        <button id="clearFilters" type="button">Clear</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="library-header">
+        <h2>Image Library</h2>
+        <span id="countText">0 images</span>
+      </div>
+      <div id="imageGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

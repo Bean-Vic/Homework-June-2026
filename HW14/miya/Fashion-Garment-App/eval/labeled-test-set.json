@@ -1,0 +1,502 @@
+[
+  {
+    "imageId": "img-001",
+    "fileName": "evening-gown-silk-red-001.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "formal",
+      "material": "silk",
+      "occasion": "formal event"
+    }
+  },
+  {
+    "imageId": "img-002",
+    "fileName": "street-denim-jacket-blue-002.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "streetwear",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-003",
+    "fileName": "blue-jeans-pants-003.jpg",
+    "expected": {
+      "garmentType": "pants",
+      "style": "casual",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-004",
+    "fileName": "vintage-floral-skirt-004.jpg",
+    "expected": {
+      "garmentType": "skirt",
+      "style": "vintage",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-005",
+    "fileName": "sport-sneaker-shoes-005.jpg",
+    "expected": {
+      "garmentType": "shoes",
+      "style": "sporty",
+      "material": "cotton",
+      "occasion": "activewear"
+    }
+  },
+  {
+    "imageId": "img-006",
+    "fileName": "minimal-leather-bag-black-006.jpg",
+    "expected": {
+      "garmentType": "bag",
+      "style": "minimal",
+      "material": "leather",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-007",
+    "fileName": "office-blazer-jacket-007.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "formal",
+      "material": "cotton",
+      "occasion": "work"
+    }
+  },
+  {
+    "imageId": "img-008",
+    "fileName": "summer-linen-top-white-008.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "linen",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-009",
+    "fileName": "winter-knit-top-009.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "knit",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-010",
+    "fileName": "summer-dress-floral-010.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "casual",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-011",
+    "fileName": "evening-gown-silk-red-011.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "formal",
+      "material": "silk",
+      "occasion": "formal event"
+    }
+  },
+  {
+    "imageId": "img-012",
+    "fileName": "street-denim-jacket-blue-012.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "streetwear",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-013",
+    "fileName": "blue-jeans-pants-013.jpg",
+    "expected": {
+      "garmentType": "pants",
+      "style": "casual",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-014",
+    "fileName": "vintage-floral-skirt-014.jpg",
+    "expected": {
+      "garmentType": "skirt",
+      "style": "vintage",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-015",
+    "fileName": "sport-sneaker-shoes-015.jpg",
+    "expected": {
+      "garmentType": "shoes",
+      "style": "sporty",
+      "material": "cotton",
+      "occasion": "activewear"
+    }
+  },
+  {
+    "imageId": "img-016",
+    "fileName": "minimal-leather-bag-black-016.jpg",
+    "expected": {
+      "garmentType": "bag",
+      "style": "minimal",
+      "material": "leather",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-017",
+    "fileName": "office-blazer-jacket-017.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "formal",
+      "material": "cotton",
+      "occasion": "work"
+    }
+  },
+  {
+    "imageId": "img-018",
+    "fileName": "summer-linen-top-white-018.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "linen",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-019",
+    "fileName": "winter-knit-top-019.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "knit",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-020",
+    "fileName": "summer-dress-floral-020.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "casual",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-021",
+    "fileName": "evening-gown-silk-red-021.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "formal",
+      "material": "silk",
+      "occasion": "formal event"
+    }
+  },
+  {
+    "imageId": "img-022",
+    "fileName": "street-denim-jacket-blue-022.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "streetwear",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-023",
+    "fileName": "blue-jeans-pants-023.jpg",
+    "expected": {
+      "garmentType": "pants",
+      "style": "casual",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-024",
+    "fileName": "vintage-floral-skirt-024.jpg",
+    "expected": {
+      "garmentType": "skirt",
+      "style": "vintage",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-025",
+    "fileName": "sport-sneaker-shoes-025.jpg",
+    "expected": {
+      "garmentType": "shoes",
+      "style": "sporty",
+      "material": "cotton",
+      "occasion": "activewear"
+    }
+  },
+  {
+    "imageId": "img-026",
+    "fileName": "minimal-leather-bag-black-026.jpg",
+    "expected": {
+      "garmentType": "bag",
+      "style": "minimal",
+      "material": "leather",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-027",
+    "fileName": "office-blazer-jacket-027.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "formal",
+      "material": "cotton",
+      "occasion": "work"
+    }
+  },
+  {
+    "imageId": "img-028",
+    "fileName": "summer-linen-top-white-028.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "linen",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-029",
+    "fileName": "winter-knit-top-029.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "knit",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-030",
+    "fileName": "summer-dress-floral-030.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "casual",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-031",
+    "fileName": "evening-gown-silk-red-031.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "formal",
+      "material": "silk",
+      "occasion": "formal event"
+    }
+  },
+  {
+    "imageId": "img-032",
+    "fileName": "street-denim-jacket-blue-032.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "streetwear",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-033",
+    "fileName": "blue-jeans-pants-033.jpg",
+    "expected": {
+      "garmentType": "pants",
+      "style": "casual",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-034",
+    "fileName": "vintage-floral-skirt-034.jpg",
+    "expected": {
+      "garmentType": "skirt",
+      "style": "vintage",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-035",
+    "fileName": "sport-sneaker-shoes-035.jpg",
+    "expected": {
+      "garmentType": "shoes",
+      "style": "sporty",
+      "material": "cotton",
+      "occasion": "activewear"
+    }
+  },
+  {
+    "imageId": "img-036",
+    "fileName": "minimal-leather-bag-black-036.jpg",
+    "expected": {
+      "garmentType": "bag",
+      "style": "minimal",
+      "material": "leather",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-037",
+    "fileName": "office-blazer-jacket-037.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "formal",
+      "material": "cotton",
+      "occasion": "work"
+    }
+  },
+  {
+    "imageId": "img-038",
+    "fileName": "summer-linen-top-white-038.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "linen",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-039",
+    "fileName": "winter-knit-top-039.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "knit",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-040",
+    "fileName": "summer-dress-floral-040.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "casual",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-041",
+    "fileName": "evening-gown-silk-red-041.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "formal",
+      "material": "silk",
+      "occasion": "formal event"
+    }
+  },
+  {
+    "imageId": "img-042",
+    "fileName": "street-denim-jacket-blue-042.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "streetwear",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-043",
+    "fileName": "blue-jeans-pants-043.jpg",
+    "expected": {
+      "garmentType": "pants",
+      "style": "casual",
+      "material": "denim",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-044",
+    "fileName": "vintage-floral-skirt-044.jpg",
+    "expected": {
+      "garmentType": "skirt",
+      "style": "vintage",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-045",
+    "fileName": "sport-sneaker-shoes-045.jpg",
+    "expected": {
+      "garmentType": "shoes",
+      "style": "sporty",
+      "material": "cotton",
+      "occasion": "activewear"
+    }
+  },
+  {
+    "imageId": "img-046",
+    "fileName": "minimal-leather-bag-black-046.jpg",
+    "expected": {
+      "garmentType": "bag",
+      "style": "minimal",
+      "material": "leather",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-047",
+    "fileName": "office-blazer-jacket-047.jpg",
+    "expected": {
+      "garmentType": "jacket",
+      "style": "formal",
+      "material": "cotton",
+      "occasion": "work"
+    }
+  },
+  {
+    "imageId": "img-048",
+    "fileName": "summer-linen-top-white-048.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "linen",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-049",
+    "fileName": "winter-knit-top-049.jpg",
+    "expected": {
+      "garmentType": "top",
+      "style": "casual",
+      "material": "knit",
+      "occasion": "daily wear"
+    }
+  },
+  {
+    "imageId": "img-050",
+    "fileName": "summer-dress-floral-050.jpg",
+    "expected": {
+      "garmentType": "dress",
+      "style": "casual",
+      "material": "cotton",
+      "occasion": "daily wear"
+    }
+  }
+]
