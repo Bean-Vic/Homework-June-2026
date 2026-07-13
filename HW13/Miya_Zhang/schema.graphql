@@ -1,0 +1,35 @@
+# GraphQL schema based on the order JSON
+
+type Customer {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  sku: String!
+  category: String!
+  description: String
+}
+
+type LineItem {
+  id: ID!
+  quantity: Int!
+  unitPrice: Float!
+  product: Product!
+}
+
+type Order {
+  id: ID!
+  status: String!
+  createdAt: String!
+  customer: Customer!
+  lineItems: [LineItem!]!
+  total: Float!
+}
+
+type Query {
+  order(orderId: ID!): Order
+}
