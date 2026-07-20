@@ -1,0 +1,7 @@
+[
+  { "externalId": "task-001", "title": "Setup project",        "status": "done",        "priority": "high"   },
+  { "externalId": "task-002", "title": "Write tests",          "status": "todo",        "priority": "medium" },
+  { "externalId": "task-003", "title": "Deploy to production", "status": "in_progress", "priority": "high"   },
+  { "externalId": "task-004", "title": "",                     "status": "todo",        "priority": "low"    },
+  { "externalId": "task-001", "title": "Setup project (dup)",  "status": "done",        "priority": "high"   }
+]
