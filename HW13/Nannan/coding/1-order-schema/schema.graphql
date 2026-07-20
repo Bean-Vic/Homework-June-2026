@@ -1,0 +1,50 @@
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum ProductCategory {
+  ELECTRONICS
+  SPORTS
+  CLOTHING
+  BOOKS
+  HOME
+  OTHER
+}
+
+type Customer {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Product {
+  id: ID!
+  name: String!
+  sku: String!
+  category: ProductCategory!
+  description: String        # nullable — some products have no description
+}
+
+type LineItem {
+  id: ID!
+  quantity: Int!
+  unitPrice: Float!
+  product: Product!
+}
+
+type Order {
+  id: ID!
+  status: OrderStatus!
+  createdAt: String!
+  customer: Customer!
+  lineItems: [LineItem!]!   # list is never null, and each item is never null
+  total: Float!
+}
+
+type Query {
+  order(orderId: ID!): Order  # returns null if not found
+}
