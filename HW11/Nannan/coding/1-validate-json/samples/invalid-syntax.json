@@ -1,0 +1,5 @@
+{
+  "name": "Alice",
+  "email": "alice@example.com",
+  "role": "admin",   <- trailing comma + arrow comment (not valid JSON)
+}
