@@ -1,0 +1,7 @@
+[
+  { "name": "Alice",  "email": "alice@import.com",  "role": "admin"   },
+  { "name": "Bob",    "email": "bob@import.com",    "role": "student" },
+  { "name": "Carol",  "email": "carol@import.com",  "role": "mentor"  },
+  { "name": "",       "email": "bad@import.com",    "role": "student" },
+  { "name": "Bob",    "email": "bob@import.com",    "role": "student" }
+]
