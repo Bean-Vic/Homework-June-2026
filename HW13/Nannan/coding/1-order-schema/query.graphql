@@ -1,0 +1,31 @@
+# Configurable query — pass orderId as a GraphQL variable
+query GetOrder($orderId: ID!) {
+  order(orderId: $orderId) {
+    id
+    status
+    createdAt
+    total
+    customer {
+      id
+      name
+      email
+    }
+    lineItems {
+      id
+      quantity
+      unitPrice
+      product {
+        id
+        name
+        sku
+        category
+        description
+      }
+    }
+  }
+}
+
+# Example variables:
+# {
+#   "orderId": "ORD-001"
+# }
