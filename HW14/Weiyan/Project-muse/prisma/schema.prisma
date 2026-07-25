@@ -1,0 +1,137 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String             @id @default(cuid())
+  name        String?
+  email       String?            @unique
+  emailVerified DateTime?
+  image       String?
+  createdAt   DateTime           @default(now())
+  accounts    Account[]
+  sessions    Session[]
+  images      InspirationImage[]
+  annotations Annotation[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model AppSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model InspirationImage {
+  id                String             @id @default(cuid())
+  title             String?
+  imageUrl          String
+  sourceType        String             @default("upload")
+  sourceUrl         String?
+  storageKey        String
+  mimeType          String
+  sizeBytes         Int
+  designerId        String
+  designer          User               @relation(fields: [designerId], references: [id])
+  description       String
+  category          String             @default("Ready-to-wear")
+  garmentType       String
+  brand             String             @default("")
+  gender            String             @default("neutral")
+  style             String
+  material          String
+  colorPalette      String
+  pattern           String
+  season            String
+  occasion          String
+  consumerProfile   String
+  trendNotes        String
+  locationContinent String?
+  locationCountry   String?
+  locationCity      String?
+  capturedAt        DateTime?
+  capturedYear      Int?
+  capturedMonth     Int?
+  capturedSeason    String?
+  aiRawOutput       String
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  annotations       Annotation[]
+  searchIndex       ImageSearchIndex?
+
+  @@index([designerId])
+  @@index([category])
+  @@index([garmentType])
+  @@index([brand])
+  @@index([gender])
+  @@index([style])
+  @@index([material])
+  @@index([occasion])
+  @@index([capturedYear])
+  @@index([capturedMonth])
+}
+
+model Annotation {
+  id        String           @id @default(cuid())
+  imageId   String
+  image     InspirationImage @relation(fields: [imageId], references: [id], onDelete: Cascade)
+  authorId  String
+  author    User             @relation(fields: [authorId], references: [id])
+  notes     String
+  tags      String
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  @@index([imageId])
+  @@index([authorId])
+}
+
+model ImageSearchIndex {
+  imageId   String           @id
+  image     InspirationImage @relation(fields: [imageId], references: [id], onDelete: Cascade)
+  text      String
+  updatedAt DateTime         @updatedAt
+}
